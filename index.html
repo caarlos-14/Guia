@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="imagenes/_123049.png" >
+    <link rel="icon" type="image/png" href="imagenes/_123049.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 </head>
+
 <body>
     <header class="container-fluid">
         <div class="row">
-            <div class="col-2">
-            <img class="logo" src="imagenes/a-vector-illustration-of-backpack-traveler-and-moon-logo-sign-in-orange-and-black-color-2CT8E26-removebg-preview.png" alt="Logo Imagen">
+            <div class="col-auto col-md-2">
+                <img class="logo"
+                    src="imagenes/a-vector-illustration-of-backpack-traveler-and-moon-logo-sign-in-orange-and-black-color-2CT8E26-removebg-preview.png"
+                    alt="Logo Imagen">
             </div>
-            <nav class="col-10 d-flex justify-content-end align-items-center gap-2">
+            <nav class="col-auto col-10 d-flex justify-content-end align-items-center gap-2">
                 <a class="text-decoration-none m-3" href="index.html">Inicio</a>
                 <a class="text-decoration-none m-3" href="barrio.html">Barrio</a>
                 <a class="text-decoration-none m-3" href="pueblo.html">Pueblo</a>
@@ -26,66 +30,267 @@
             </nav>
         </div>
     </header>
-<main class="container-fluid">
-    <div class="row g-5 justify-content-center gap-5 mb-5">
+    <main class="container-fluid">
 
-        <div class="card h-10 col-10 md:col-3 d-flex justify-content-start align-items-start">
-            <img src="imagenes/fuster.jpg" alt="" class="img-fluid">
-            <div class="card-body">
-                <h5 class="card-title">Nicolás Fúster</h5>
-                <p class="card-text">situado en la zona oeste de Pinto junto al barrio de La Cristina, es una tranquila área residencial articulada alrededor
-                del extenso Parque Municipal Nicolás Fúster.</p>
-                <a href="barrio.html" class="btn mt-auto">Ver más</a>
+        <!-- ========== NUEVO: INTRODUCCIÓN DE LA GUÍA ========== -->
+        <section class="container text-center py-5" style="color: var(--text-color)">
+            <p class="text-uppercase fw-semibold small mb-2" style="color: #F08E21; letter-spacing: 0.12em">
+                Guía turística
+            </p>
+            <h1 class="display-5 fw-bold mb-3">Descubre Pinto, de tu barrio al mundo</h1>
+            <p class="lead mx-auto mb-4" style="max-width: 760px">
+                Esta guía te propone un recorrido en cuatro paradas, de lo más cercano a lo más amplio:
+                el barrio donde se vive el día a día, el pueblo que lo rodea, el país al que pertenece
+                y el instituto donde se aprende a conocerlos mejor. Cada parada tiene su propia página
+                con información, datos y curiosidades.
+            </p>
+            <a href="#paginas" class="btn px-4 rounded-pill">¿Qué hay en cada página?</a>
+        </section>
+        <!-- ========== FIN NUEVO ========== -->
+
+        <div class="row g-5 justify-content-center gap-5 mb-5">
+
+            <div class="card h-10 col-10 md:col-3 d-flex justify-content-start align-items-start">
+                <img src="imagenes/fuster.jpg" alt="" class="img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title">Nicolás Fúster</h5>
+                    <p class="card-text">situado en la zona oeste de Pinto junto al barrio de La Cristina, es una
+                        tranquila área residencial articulada alrededor
+                        del extenso Parque Municipal Nicolás Fúster.</p>
+                    <a href="barrio.html" class="btn mt-auto">Ver más</a>
+                </div>
+            </div>
+            <div class="card col-10 md:col-3 d-flex justify-content-start align-items-start">
+                <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="" class="img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title">Pinto</h5>
+                    <p class="card-text">es un municipio y localidad española perteneciente a la Comunidad de Madrid,
+                        situado a unos 20 km al sur de la capital.</p>
+                    <a href="pueblo.html" class="btn mt-auto">Ver más</a>
+                </div>
+            </div>
+            <div class="card col-10 md:col-2 d-flex justify-content-start align-items-start">
+                <img src="imagenes/images.jpeg" alt="pais" class="img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title">España</h5>
+                    <p class="card-text">España es un país soberano transcontinental ubicado en el suroeste de Europa,
+                        miembro de la Unión Europea y cuya capital
+                        es Madrid</p>
+                    <a href="pais.html" class="btn mt-auto">Ver más</a>
+                </div>
+            </div>
+            <div class="card col-10 md:col-3 d-flex justify-content-start align-items-start">
+                <img src="imagenes/instituto-tecnologico-calderon-de-la-barca.jpg" alt="Calderón de la Barca"
+                    class="img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title">IES Calderón de la Barca</h5>
+                    <p class="card-text">Es uno de los Institutos de Innovación Tecnológica (IIT) de la Comunidad de
+                        Madrid, con fuerte integración de
+                        herramientas TIC y participación en proyectos internacionales como Erasmus+.</p>
+                    <a href="instituto.html" class="btn mt-auto">Ver más</a>
+                </div>
             </div>
         </div>
-        <div class="card col-10 md:col-3 d-flex justify-content-start align-items-start">
-            <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="" class="img-fluid">
-            <div class="card-body">
-                <h5 class="card-title">Pinto</h5>
-                <p class="card-text">es un municipio y localidad española perteneciente a la Comunidad de Madrid, situado a unos 20 km al sur de la capital.</p>
-                <a href="pueblo.html" class="btn mt-auto">Ver más</a>
-            </div>
-        </div>
-        <div class="card col-10 md:col-2 d-flex justify-content-start align-items-start">
-            <img src="imagenes/images.jpeg" alt="pais" class="img-fluid">
-            <div class="card-body">
-                <h5 class="card-title">España</h5>
-                <p class="card-text">España es un país soberano transcontinental ubicado en el suroeste de Europa, miembro de la Unión Europea y cuya capital
-                es Madrid</p>
-                <a href="pais.html" class="btn mt-auto">Ver más</a>
-            </div>
-        </div>
-        <div class="card col-10 md:col-3 d-flex justify-content-start align-items-start">
-            <img src="imagenes/instituto-tecnologico-calderon-de-la-barca.jpg" alt="Calderón de la Barca" class="img-fluid">
-            <div class="card-body">
-                <h5 class="card-title">IES Calderón de la Barca</h5>
-                <p class="card-text">Es uno de los Institutos de Innovación Tecnológica (IIT) de la Comunidad de Madrid, con fuerte integración de
-                herramientas TIC y participación en proyectos internacionales como Erasmus+.</p>
-                <a href="instituto.html" class="btn mt-auto">Ver más</a>
-            </div>
-        </div>
+
+<!-- ========== NUEVO: QUÉ HAY EN CADA PÁGINA ========== -->
+<section id="paginas" class="container pb-5" style="color: var(--text-color)">
+    <div class="text-center mb-5">
+        <p class="text-uppercase fw-semibold small mb-2" style="color: #F08E21; letter-spacing: 0.12em">
+            Tu recorrido
+        </p>
+        <h2 class="fw-bold mb-2">Una ruta en 4 paradas</h2>
+        <p class="mx-auto opacity-75" style="max-width: 620px">
+            De lo más cercano a lo más lejano. Elige una parada y descubre de qué trata.
+        </p>
     </div>
-</main>
-<footer class="border-top border-1">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <small class="d-flex justify-content-center m-5">Todos los derechos reservados 2026/2027</small>
-            </div>
 
-            <div class="col-6 d-flex justify-content-start">
-                <small class="m-5">Autor: Carlos Sánchez García</small>
-            </div>
+    <div class="row g-4">
 
-            <div class="col-6 d-flex justify-content-end">
-                <small class="m-5">Curso: 2 DAM</small>
+        <!-- PARADA 1 · BARRIO -->
+        <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle position-relative mb-2"
+                style="width: 64px; height: 64px; background: #F08E21; color: #121212; z-index: 1; border: 4px solid var(--bg-color)">
+                <i class="bi bi-tree-fill fs-3" aria-hidden="true"></i>
+            </div>
+            <small class="text-uppercase fw-bold mb-2" style="color: #F08E21; letter-spacing: 0.1em">Parada 1</small>
+
+            <a href="barrio.html"
+                class="card w-100 flex-grow-1 text-decoration-none rounded-4 shadow-sm overflow-hidden d-flex flex-column flex-md-row">
+                <img src="imagenes/fuster.jpg" alt="Parque Municipal Nicolás Fúster" class="flex-shrink-0"
+                    style="width: 100%; min-height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column text-start">
+                    <h3 class="h5 fw-bold mb-1">Barrio</h3>
+                    <p class="fw-semibold small mb-2" style="color: #F08E21">¿Cómo es mi zona?</p>
+                    <p class="small opacity-75 mb-3">Nicolás Fúster, una zona residencial tranquila de Pinto.</p>
+
+                    <div class="d-flex flex-wrap gap-1 mb-3">
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-geo-alt-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Ubicación
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-tree-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Parque
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-house-door-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Vida de
+                            barrio
+                        </span>
+                    </div>
+
+                    <span class="btn mt-auto rounded-pill align-self-end">Visitar el barrio <i
+                            class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- PARADA 2 · PUEBLO -->
+        <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle position-relative mb-2"
+                style="width: 64px; height: 64px; background: #F08E21; color: #121212; z-index: 1; border: 4px solid var(--bg-color)">
+                <i class="bi bi-buildings-fill fs-3" aria-hidden="true"></i>
+            </div>
+            <small class="text-uppercase fw-bold mb-2" style="color: #F08E21; letter-spacing: 0.1em">Parada 2</small>
+
+            <a href="pueblo.html"
+                class="card w-100 flex-grow-1 text-decoration-none rounded-4 shadow-sm overflow-hidden d-flex flex-column flex-md-row">
+                <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="Plaza de la Constitución de Pinto"
+                    class="flex-shrink-0" style="width: 100%;min-height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column text-start">
+                    <h3 class="h5 fw-bold mb-1">Pueblo</h3>
+                    <p class="fw-semibold small mb-2" style="color: #F08E21">¿Dónde vivo?</p>
+                    <p class="small opacity-75 mb-3">Pinto, a unos 20 km al sur de Madrid capital.</p>
+
+                    <div class="d-flex flex-wrap gap-1 mb-3">
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-bar-chart-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Datos
+                            clave
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-bank me-1" style="color: #F08E21" aria-hidden="true"></i>Plaza de la
+                            Constitución
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-geo-alt-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Cerca de
+                            Madrid
+                        </span>
+                    </div>
+
+                    <span class="btn mt-auto rounded-pill align-self-end">Visitar el pueblo <i
+                            class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- PARADA 3 · PAÍS -->
+        <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle position-relative mb-2"
+                style="width: 64px; height: 64px; background: #F08E21; color: #121212; z-index: 1; border: 4px solid var(--bg-color)">
+                <i class="bi bi-globe-europe-africa fs-3" aria-hidden="true"></i>
+            </div>
+            <small class="text-uppercase fw-bold mb-2" style="color: #F08E21; letter-spacing: 0.1em">Parada 3</small>
+
+            <a href="pais.html"
+                class="card w-100 flex-grow-1 text-decoration-none rounded-4 shadow-sm overflow-hidden d-flex flex-column flex-md-row">
+                <img src="imagenes/images.jpeg" alt="España" class="flex-shrink-0"
+                    style="width: 100%; min-height: 220px; object-fit: cover;">
+                <div class="card-body p-4 d-flex flex-column text-start">
+                    <h3 class="h5 fw-bold mb-1">País</h3>
+                    <p class="fw-semibold small mb-2" style="color: #F08E21">¿En qué país estoy?</p>
+                    <p class="small opacity-75 mb-3">España, en el suroeste de Europa.</p>
+
+                    <div class="d-flex flex-wrap gap-1 mb-3">
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-globe-europe-africa me-1" style="color: #F08E21"
+                                aria-hidden="true"></i>Situación
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-flag-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Unión Europea
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-pin-map-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Madrid,
+                            capital
+                        </span>
+                    </div>
+
+                    <span class="btn mt-auto rounded-pill align-self-end">Conocer el país <i
+                            class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- PARADA 4 · INSTITUTO -->
+        <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle position-relative mb-2"
+                style="width: 64px; height: 64px; background: #F08E21; color: #121212; z-index: 1; border: 4px solid var(--bg-color)">
+                <i class="bi bi-mortarboard-fill fs-3" aria-hidden="true"></i>
+            </div>
+            <small class="text-uppercase fw-bold mb-2" style="color: #F08E21; letter-spacing: 0.1em">Parada 4</small>
+
+            <a href="instituto.html"
+                class="card w-100 flex-grow-1 text-decoration-none rounded-4 shadow-sm overflow-hidden d-flex flex-column flex-md-row">
+                <img src="imagenes/instituto-tecnologico-calderon-de-la-barca.jpg" alt="IES Calderón de la Barca"
+                    class="">
+                <div class="card-body p-4 d-flex flex-column text-start">
+                    <h3 class="h5 fw-bold mb-1">Instituto</h3>
+                    <p class="fw-semibold small mb-2" style="color: #F08E21">¿Dónde estudio?</p>
+                    <p class="small opacity-75 mb-3">IES Calderón de la Barca, un instituto de innovación tecnológica.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-1 mb-3">
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-cpu-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Tecnología TIC
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-airplane-fill me-1" style="color: #F08E21" aria-hidden="true"></i>Erasmus+
+                        </span>
+                        <span class="badge rounded-pill border fw-normal px-2 py-1"
+                            style="color: inherit; background: transparent">
+                            <i class="bi bi-mortarboard-fill me-1" style="color: #F08E21"
+                                aria-hidden="true"></i>Innovación (IIT)
+                        </span>
+                    </div>
+
+                    <span class="btn mt-auto rounded-pill align-self-end">Visitar el instituto <i
+                            class="bi bi-arrow-right ms-1" aria-hidden="true"></i></span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- ========== FIN NUEVO ========== -->
+    </main>
+    <footer class="border-top border-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <small class="d-flex justify-content-center m-5">Todos los derechos reservados 2026/2027</small>
+                </div>
+
+                <div class="col-6 d-flex justify-content-start">
+                    <small class="m-5">Autor: Carlos Sánchez García</small>
+                </div>
+
+                <div class="col-6 d-flex justify-content-end">
+                    <small class="m-5">Curso: 2 DAM</small>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
-    crossorigin="anonymous"></script>
+    </footer>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

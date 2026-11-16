@@ -1,57 +1,98 @@
-html,body {
+html,
+body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
     height: 100%;
 }
+
+
 .card {
     background-color: var(--card-bg);
     color: var(--card-text);
     cursor: pointer;
     padding: 0 !important;
 }
-.card img{
+
+.card img {
     object-fit: cover;
     height: 120px;
     width: 100%;
 }
+
 .card-body {
     height: auto;
     width: 100%;
 }
+
 .card-title {
     font-size: 1em !important;
 }
-.card-text{
+
+.card-text {
     font-size: 0.8em !important;
 }
+
 .card .btn {
     font-size: 0.8em !important;
 }
+
 nav a {
     color: var(--nav-link-color);
 }
-footer{
+
+footer {
     color: var(--text-color);
 }
-.btn{
+
+.btn {
     background-color: #F08E21;
     color: var(--card-text);
 }
 
-
-
-.logo{
+.logo {
     width: 100px;
     height: auto;
 }
 
-/*ALTERNAR MODO CLARO - MODO OSCURO*/
-body.modoOscuro{
+/* ========== TARJETAS HORIZONTALES EN #PAGINAS ========== */
+#paginas .card {
+    flex-direction: row !important;
+    align-items: stretch;
+}
+
+#paginas .card img {
+    width: 38% !important;
+    max-width: 230px;
+    height: auto !important;
+    min-height: 220px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+#paginas .card-body {
+    width: auto !important;
+    flex: 1;
+}
+
+@media (max-width: 767px) {
+    #paginas .card {
+        flex-direction: column !important;
+    }
+
+    #paginas .card img {
+        width: 100% !important;
+        max-width: 100%;
+        height: 180px !important;
+        min-height: unset;
+    }
+}
+
+/* ALTERNAR MODO CLARO - MODO OSCURO */
+body.modoOscuro {
     --bg-color: #121212;
     --text-color: #FAF9F6;
     --nav-link-color: #FAF9F6;
-    /* Cambia a amarillo/dorado en modo oscuro */
     --card-bg: #F5F5F5;
     --card-text: #121212;
 }
@@ -60,12 +101,12 @@ body.modoClaro {
     --bg-color: #FAF9F6;
     --text-color: #121212;
     --nav-link-color: #121212;
-    /* Cambia a amarillo/dorado en modo oscuro */
     --card-bg: #1E1E1E;
     --card-text: #FAF9F6;
 }
-/*====================================*/
-/*PUEBLO-CARRUSEL*/
+
+/* ==================================== */
+/* PUEBLO - CARRUSEL */
 .marquee-wrapper {
     width: 100%;
     overflow: hidden;
@@ -159,7 +200,8 @@ body.modoClaro {
         animation-duration: 20s;
     }
 }
-/*======================================*/
+
+/* ====================================== */
 body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -168,4 +210,3 @@ body {
 body.fade-in {
     opacity: 1;
 }
-
