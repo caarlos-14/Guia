@@ -11,23 +11,24 @@
         integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 </head>
 <body>
-    <header class="container-fluid">
-        <div class="row">
-            <div class="col-2">
-                <img class="logo"
-                    src="imagenes/a-vector-illustration-of-backpack-traveler-and-moon-logo-sign-in-orange-and-black-color-2CT8E26-removebg-preview.png"
-                    alt="Logo Imagen">
-            </div>
-            <nav class="col-10 d-flex justify-content-end align-items-center gap-2">
-                <a class="text-decoration-none m-3" href="index.html">Inicio</a>
-                <a class="text-decoration-none m-3" href="barrio.html">Barrio</a>
-                <a class="text-decoration-none m-3" href="pueblo.html">Pueblo</a>
-                <a class="text-decoration-none m-3" href="pais.html">País</a>
-                <a class="text-decoration-none m-3" href="instituto.html">Instituto</a>
-                <a href="#" class="modo"><i class="iconoModo bi bi-sun-fill"></i></a>
-            </nav>
-        </div>
-    </header>
+<header class="container-fluid py-2">
+    <div class="d-flex flex-column md:flex-row align-items-center md:justify-content-between gap-2">
+        <a href="index.html">
+            <img class="logo"
+                src="imagenes/a-vector-illustration-of-backpack-traveler-and-moon-logo-sign-in-orange-and-black-color-2CT8E26-removebg-preview.png"
+                alt="Logo de la guía">
+        </a>
+        <nav class="d-flex flex-wrap justify-content-center md:justify-content-end align-items-center">
+            <a class="text-decoration-none m-2 lg:m-3" href="index.html">Inicio</a>
+            <a class="text-decoration-none m-2 lg:m-3" href="barrio.html">Barrio</a>
+            <a class="text-decoration-none m-2 lg:m-3" href="pueblo.html">Pueblo</a>
+            <a class="text-decoration-none m-2 lg:m-3" href="pais.html">País</a>
+            <a class="text-decoration-none m-2 lg:m-3" href="instituto.html">Instituto</a>
+            <a href="#" class="modo m-2 lg:m-3" aria-label="Cambiar modo claro/oscuro"><i
+                    class="iconoModo bi bi-sun-fill"></i></a>
+        </nav>
+    </div>
+</header>
 <main class="container-fluid">
     <div class="row g-5 justify-content-center gap-2 mb-5">
         <div class="card col-10 md:col-3 d-flex justify-content-center align-items-start">
