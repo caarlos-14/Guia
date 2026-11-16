@@ -62,9 +62,7 @@ footer {
 }
 
 #paginas .card img {
-    width: 38% !important;
-    max-width: 230px;
-    height: auto !important;
+    height: 100% !important;
     min-height: 220px;
     object-fit: cover;
     flex-shrink: 0;
@@ -209,4 +207,180 @@ body {
 
 body.fade-in {
     opacity: 1;
+}
+
+/*Estilo para Cursos Calderon*/
+#seccion-instituto {
+    --ins-acento: #F08E21;
+    color: var(--text-color);
+    scroll-margin-top: 1rem;
+}
+
+#seccion-instituto .ins-acento {
+    color: var(--ins-acento);
+}
+
+#seccion-instituto .ins-sobretitulo {
+    color: var(--ins-acento);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* Tarjetas propias (no usan .card, así no chocan con ".card img" ni ".card-body") */
+#seccion-instituto .ins-card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#seccion-instituto .ins-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#seccion-instituto .ins-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--ins-acento);
+    color: #121212;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+#seccion-instituto .ins-etiqueta {
+    display: inline-block;
+    border: 1px solid var(--ins-acento);
+    border-radius: 50rem;
+    color: var(--ins-acento);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+}
+
+/* Botones */
+#seccion-instituto .ins-boton,
+#seccion-instituto .ins-filtro {
+    display: inline-block;
+    border: 2px solid var(--ins-acento);
+    border-radius: 50rem;
+    background-color: var(--ins-acento);
+    color: #121212;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+#seccion-instituto .ins-boton:hover {
+    transform: translateY(-2px);
+}
+
+#seccion-instituto .ins-boton-borde,
+#seccion-instituto .ins-filtro {
+    background-color: transparent;
+    color: inherit;
+}
+
+#seccion-instituto .ins-filtro {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+}
+
+#seccion-instituto .ins-filtro:hover,
+#seccion-instituto .ins-filtro.activo {
+    background-color: var(--ins-acento);
+    color: #121212;
+}
+
+#seccion-instituto .ins-boton:focus-visible,
+#seccion-instituto .ins-filtro:focus-visible,
+#seccion-instituto .ins-opcion:focus-visible,
+#seccion-instituto .ins-detalles summary:focus-visible {
+    outline: 3px solid var(--ins-acento);
+    outline-offset: 2px;
+}
+
+/* Explorador: transición suave al filtrar */
+#seccion-instituto .ins-estudio {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#seccion-instituto .ins-estudio.ins-saliendo {
+    opacity: 0;
+    transform: scale(0.96);
+}
+
+#seccion-instituto .ins-detalles summary {
+    color: var(--ins-acento);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Quiz */
+#seccion-instituto .ins-card[data-quiz]:hover {
+    transform: none;
+}
+
+#seccion-instituto .ins-progreso {
+    height: 0.5rem;
+    border-radius: 50rem;
+    background-color: rgba(128, 128, 128, 0.3);
+    overflow: hidden;
+}
+
+#seccion-instituto .ins-progreso-barra {
+    width: 0;
+    height: 100%;
+    background-color: var(--ins-acento);
+    transition: width 0.3s ease;
+}
+
+#seccion-instituto .ins-opcion {
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 0.75rem;
+    background-color: transparent;
+    color: inherit;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+#seccion-instituto .ins-opcion:hover {
+    border-color: var(--ins-acento);
+    transform: translateX(4px);
+}
+
+#seccion-instituto .ins-pregunta,
+#seccion-instituto [data-quiz-resultado] {
+    animation: ins-aparecer 0.3s ease;
+}
+
+@keyframes ins-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #seccion-instituto * {
+        animation: none !important;
+        transition: none !important;
+    }
 }

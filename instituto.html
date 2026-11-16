@@ -149,6 +149,234 @@
             </div>
         </div>
     </section>
+    <section id="seccion-instituto">
+    
+        <!-- ========== INTERACTIVO 1 · EXPLORADOR DE ESTUDIOS ========== -->
+        <div id="ins-estudios" class="container py-5">
+            <div class="text-center mb-4">
+                <p class="ins-sobretitulo mb-2">Explorador</p>
+                <h2 class="fw-bold">Etapas y ciclos formativos</h2>
+                <p class="opacity-75 mb-0">Filtra por etapa y abre «Ver detalles» en la que te interese.</p>
+            </div>
+    
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2" role="group" aria-label="Filtrar estudios">
+                <button type="button" class="ins-filtro activo" data-filtro="todos" aria-pressed="true">Todos</button>
+                <button type="button" class="ins-filtro" data-filtro="eso-bach" aria-pressed="false">ESO y
+                    Bachillerato</button>
+                <button type="button" class="ins-filtro" data-filtro="medio" aria-pressed="false">Grado Medio (SMR)</button>
+                <button type="button" class="ins-filtro" data-filtro="superior" aria-pressed="false">Grado Superior (DAM /
+                    ASIR)</button>
+            </div>
+            <p class="text-center small opacity-75 mb-4" data-contador aria-live="polite">Mostrando 5 estudios</p>
+    
+            <div class="row g-4 justify-content-center" data-lista-estudios>
+                <div class="col-12 col-md-6 md:col-6 col-lg-4 lg:col-4 ins-estudio" data-categoria="eso-bach">
+                    <article class="ins-card h-100 p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="ins-icono"><i class="bi bi-book-fill" aria-hidden="true"></i></span>
+                            <span class="ins-etiqueta">ESO</span>
+                        </div>
+                        <h3 class="h5 fw-bold">Educación Secundaria Obligatoria</h3>
+                        <p class="small">De 1.º a 4.º, con varias opciones en el último curso para orientar tu camino.</p>
+                        <ul class="list-unstyled small mb-3">
+                            <li><i class="bi bi-clock-fill ins-acento me-2" aria-hidden="true"></i>4 cursos</li>
+                            <li><i class="bi bi-sun-fill ins-acento me-2" aria-hidden="true"></i>Turno de mañana</li>
+                        </ul>
+                        <details class="ins-detalles mt-auto">
+                            <summary>Ver detalles</summary>
+                            <p class="small mt-2 mb-1"><strong>Enfoque práctico:</strong> las TIC se usan en todas las
+                                materias y hay aulas de trabajo cooperativo con portátiles.</p>
+                            <p class="small mb-0"><strong>Salidas:</strong> Bachillerato o ciclos formativos de grado medio.
+                            </p>
+                        </details>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 md:col-6 col-lg-4 lg:col-4 ins-estudio" data-categoria="eso-bach">
+                    <article class="ins-card h-100 p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="ins-icono"><i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i></span>
+                            <span class="ins-etiqueta">Bachillerato</span>
+                        </div>
+                        <h3 class="h5 fw-bold">Bachillerato</h3>
+                        <p class="small">Dos modalidades: Ciencias y Tecnología, y Humanidades y Ciencias Sociales.</p>
+                        <ul class="list-unstyled small mb-3">
+                            <li><i class="bi bi-clock-fill ins-acento me-2" aria-hidden="true"></i>2 cursos</li>
+                            <li><i class="bi bi-sun-fill ins-acento me-2" aria-hidden="true"></i>Turno de mañana</li>
+                        </ul>
+                        <details class="ins-detalles mt-auto">
+                            <summary>Ver detalles</summary>
+                            <p class="small mt-2 mb-1"><strong>Enfoque práctico:</strong> preparación para la prueba de
+                                acceso a la universidad con apoyo de herramientas digitales.</p>
+                            <p class="small mb-0"><strong>Salidas:</strong> universidad o ciclos formativos de grado
+                                superior.</p>
+                        </details>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 md:col-6 col-lg-4 lg:col-4 ins-estudio" data-categoria="medio">
+                    <article class="ins-card h-100 p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="ins-icono"><i class="bi bi-hdd-network-fill" aria-hidden="true"></i></span>
+                            <span class="ins-etiqueta">Grado Medio</span>
+                        </div>
+                        <h3 class="h5 fw-bold">SMR · Sistemas Microinformáticos y Redes</h3>
+                        <p class="small">Aprende a montar, configurar y mantener equipos y redes locales.</p>
+                        <ul class="list-unstyled small mb-3">
+                            <li><i class="bi bi-clock-fill ins-acento me-2" aria-hidden="true"></i>2 cursos (2.000 horas)
+                            </li>
+                            <li><i class="bi bi-sun-fill ins-acento me-2" aria-hidden="true"></i>Turno de mañana</li>
+                        </ul>
+                        <details class="ins-detalles mt-auto">
+                            <summary>Ver detalles</summary>
+                            <p class="small mt-2 mb-1"><strong>Enfoque práctico:</strong> talleres de montaje de equipos,
+                                redes locales, sistemas operativos y seguridad, con prácticas en empresa.</p>
+                            <p class="small mb-0"><strong>Salidas:</strong> técnico de soporte, instalador de redes,
+                                mantenimiento informático o acceso a grado superior.</p>
+                        </details>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 md:col-6 col-lg-4 lg:col-4 ins-estudio" data-categoria="superior">
+                    <article class="ins-card h-100 p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="ins-icono"><i class="bi bi-phone-fill" aria-hidden="true"></i></span>
+                            <span class="ins-etiqueta">Grado Superior</span>
+                        </div>
+                        <h3 class="h5 fw-bold">DAM · Desarrollo de Aplicaciones Multiplataforma</h3>
+                        <p class="small">Programa aplicaciones para móvil, escritorio y servicios conectados a bases de
+                            datos.</p>
+                        <ul class="list-unstyled small mb-3">
+                            <li><i class="bi bi-clock-fill ins-acento me-2" aria-hidden="true"></i>2 cursos (2.000 horas)
+                            </li>
+                            <li><i class="bi bi-sun-fill ins-acento me-2" aria-hidden="true"></i>Turno de tarde</li>
+                        </ul>
+                        <details class="ins-detalles mt-auto">
+                            <summary>Ver detalles</summary>
+                            <p class="small mt-2 mb-1"><strong>Enfoque práctico:</strong> programación, bases de datos,
+                                interfaces y un proyecto final, con prácticas en empresa.</p>
+                            <p class="small mb-0"><strong>Salidas:</strong> desarrollador de aplicaciones móviles y de
+                                escritorio, o acceso a la universidad.</p>
+                        </details>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 md:col-6 col-lg-4 lg:col-4 ins-estudio" data-categoria="superior">
+                    <article class="ins-card h-100 p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="ins-icono"><i class="bi bi-server" aria-hidden="true"></i></span>
+                            <span class="ins-etiqueta">Grado Superior</span>
+                        </div>
+                        <h3 class="h5 fw-bold">ASIR · Administración de Sistemas Informáticos en Red</h3>
+                        <p class="small">Administra servidores, redes y servicios, y mantenlos seguros.</p>
+                        <ul class="list-unstyled small mb-3">
+                            <li><i class="bi bi-clock-fill ins-acento me-2" aria-hidden="true"></i>2 cursos (2.000 horas)
+                            </li>
+                            <li><i class="bi bi-sun-fill ins-acento me-2" aria-hidden="true"></i>Turno de tarde</li>
+                        </ul>
+                        <details class="ins-detalles mt-auto">
+                            <summary>Ver detalles</summary>
+                            <p class="small mt-2 mb-1"><strong>Enfoque práctico:</strong> implantación de sistemas
+                                operativos, redes, bases de datos y seguridad, con prácticas en empresa.</p>
+                            <p class="small mb-0"><strong>Salidas:</strong> administrador de sistemas, técnico de redes o
+                                acceso a la universidad.</p>
+                        </details>
+                    </article>
+                </div>
+            </div>
+        </div>
+    
+        <!-- ========== INTERACTIVO 2 · QUIZ ========== -->
+        <div id="ins-quiz" class="container py-5">
+            <div class="text-center mb-4">
+                <p class="ins-sobretitulo mb-2">Test rápido</p>
+                <h2 class="fw-bold">¿Qué itinerario encaja contigo?</h2>
+                <p class="opacity-75 mb-0">Tres preguntas, menos de un minuto.</p>
+            </div>
+    
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 md:col-10 col-lg-7 lg:col-7">
+                    <div class="ins-card p-4" data-quiz>
+    
+                        <div data-quiz-preguntas>
+                            <div class="d-flex justify-content-between small mb-2">
+                                <span data-quiz-paso>Pregunta 1 de 3</span>
+                            </div>
+                            <div class="ins-progreso mb-4" role="progressbar" aria-label="Progreso del test"
+                                aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+                                <div class="ins-progreso-barra" data-quiz-barra></div>
+                            </div>
+    
+                            <div class="ins-pregunta" data-pregunta="1">
+                                <h3 class="h5 fw-bold mb-3">¿Qué te apetece más hacer una tarde libre?</h3>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="ins-opcion" data-perfil="dam"><i
+                                            class="bi bi-phone-fill ins-acento me-2" aria-hidden="true"></i>Crear una app o
+                                        un juego para el móvil</button>
+                                    <button type="button" class="ins-opcion" data-perfil="asir"><i
+                                            class="bi bi-server ins-acento me-2" aria-hidden="true"></i>Montar un servidor y
+                                        que todo funcione</button>
+                                    <button type="button" class="ins-opcion" data-perfil="smr"><i
+                                            class="bi bi-tools ins-acento me-2" aria-hidden="true"></i>Abrir un ordenador y
+                                        arreglarlo</button>
+                                    <button type="button" class="ins-opcion" data-perfil="erasmus"><i
+                                            class="bi bi-airplane-fill ins-acento me-2" aria-hidden="true"></i>Planear un
+                                        viaje a otro país</button>
+                                </div>
+                            </div>
+                            <div class="ins-pregunta" data-pregunta="2" hidden>
+                                <h3 class="h5 fw-bold mb-3">En un trabajo en grupo, tú eres quien…</h3>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="ins-opcion" data-perfil="dam"><i
+                                            class="bi bi-code-slash ins-acento me-2" aria-hidden="true"></i>Programa la
+                                        solución</button>
+                                    <button type="button" class="ins-opcion" data-perfil="asir"><i
+                                            class="bi bi-shield-lock-fill ins-acento me-2" aria-hidden="true"></i>Se asegura
+                                        de que nada falle ni se cuele nadie</button>
+                                    <button type="button" class="ins-opcion" data-perfil="smr"><i
+                                            class="bi bi-router-fill ins-acento me-2" aria-hidden="true"></i>Conecta los
+                                        equipos y la red</button>
+                                    <button type="button" class="ins-opcion" data-perfil="erasmus"><i
+                                            class="bi bi-translate ins-acento me-2" aria-hidden="true"></i>Habla con todo el
+                                        mundo, también en inglés</button>
+                                </div>
+                            </div>
+                            <div class="ins-pregunta" data-pregunta="3" hidden>
+                                <h3 class="h5 fw-bold mb-3">¿Qué te gustaría conseguir al terminar?</h3>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="ins-opcion" data-perfil="dam"><i
+                                            class="bi bi-rocket-takeoff-fill ins-acento me-2"
+                                            aria-hidden="true"></i>Publicar mi propia aplicación</button>
+                                    <button type="button" class="ins-opcion" data-perfil="asir"><i
+                                            class="bi bi-cloud-fill ins-acento me-2" aria-hidden="true"></i>Administrar los
+                                        sistemas de una empresa</button>
+                                    <button type="button" class="ins-opcion" data-perfil="smr"><i
+                                            class="bi bi-wrench-adjustable ins-acento me-2" aria-hidden="true"></i>Un título
+                                        para empezar a trabajar pronto</button>
+                                    <button type="button" class="ins-opcion" data-perfil="erasmus"><i
+                                            class="bi bi-globe-europe-africa ins-acento me-2" aria-hidden="true"></i>Haber
+                                        estudiado o hecho prácticas fuera</button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div data-quiz-resultado hidden aria-live="polite">
+                            <p class="ins-sobretitulo mb-2">Tu resultado</p>
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <span class="ins-icono"><i class="bi" data-res-icono aria-hidden="true"></i></span>
+                                <h3 class="h4 fw-bold mb-0" data-res-titulo></h3>
+                            </div>
+                            <p data-res-texto></p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#ins-estudios" class="ins-boton" data-res-enlace>Ver en el explorador</a>
+                                <button type="button" class="ins-boton ins-boton-borde" data-quiz-repetir><i
+                                        class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i>Repetir
+                                    test</button>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
 </main>
     <footer class="border-top border-1">
         <div class="container-fluid">
