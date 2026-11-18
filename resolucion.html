@@ -1,42 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resolución</title>
+    <title>Proceso de Resolución</title>
+    <link rel="icon" type="image/png" href="imagenes/_123049.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 </head>
-<body style="background-color: rgb(30, 42, 52);">
-<h3>Proceso de Resolución</h3>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <p>Para empezar a realizar el trabajo he definidio la estructura inicial, poniendo el menú de navegación y el footer para
-            tener la misma estructura en todos los archivos que iba a tener la aplicación, dado que cada " lugar " iba a ser puesto como un HTML diferente.</p>
-        </div>
 
-        <div class="col-6 mt-5">
-            <img class="img-fluid" src="/imagenes/explicacion/menu.png" alt="menu">
-        </div>
+<body style="background-color: rgb(30, 42, 52); color: #FAF9F6;">
 
-        <div class="col-6 mt-5 d-flex align-items-center">
-            Navbar Principal de la Aplicación realizada en Bootstrap
-        </div>
+    <!-- ========== CABECERA ========== -->
+    <header class="container py-5 text-center">
+        <p class="text-uppercase fw-semibold small mb-2" style="color: #F08E21; letter-spacing: 0.12em">
+            Guía turística de Pinto
+        </p>
+        <h1 class="fw-bold mb-3">Proceso de Resolución</h1>
+        <p class="mx-auto opacity-75 mb-4" style="max-width: 720px">
+            Paso a paso de cómo he construido la aplicación: desde la estructura común de todas las páginas hasta las
+            secciones interactivas de la página del instituto y el uso que hice de la IA.
+        </p>
 
-        <div class="col-6 mt-5">
-            <p>Footer común para todas las páginas realizado con Bootstrap.</p>
-        </div>
+        <!-- Índice -->
+        <nav class="d-flex flex-wrap justify-content-center gap-2" aria-label="Índice del proceso">
+            <a href="#paso-1" class="border rounded-pill px-3 py-1 small text-decoration-none">1 · Estructura</a>
+            <a href="#paso-2" class="border rounded-pill px-3 py-1 small text-decoration-none">2 · Modo claro/oscuro</a>
+            <a href="#paso-3" class="border rounded-pill px-3 py-1 small text-decoration-none">3 · Página de inicio</a>
+            <a href="#paso-4" class="border rounded-pill px-3 py-1 small text-decoration-none">4 · Itinerario</a>
+            <a href="#paso-5" class="border rounded-pill px-3 py-1 small text-decoration-none">5 · Barrio</a>
+            <a href="#paso-6" class="border rounded-pill px-3 py-1 small text-decoration-none">6 · Estudios</a>
+            <a href="#paso-7" class="border rounded-pill px-3 py-1 small text-decoration-none">7 · Maqueta 3D</a>
+            <a href="#paso-8" class="border rounded-pill px-3 py-1 small text-decoration-none">8 · Uso de IA</a>
+        </nav>
+    </header>
 
-        <div class="col-6 mt-5">
-            <img class="img-fluid" src="/imagenes/explicacion/footer.png" alt="Footer">
-        </div>
-    </div>
-</div>
-    
+    <main class="container pb-5">
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
-    crossorigin="anonymous"></script>
+        <!-- ========== PASO 1 · ESTRUCTURA COMÚN ========== -->
+        <section id="paso-1" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">01</span> · Estructura común</h2>
+            <p>
+                Para empezar a realizar el trabajo he definido la estructura inicial, poniendo el menú de navegación y
+                el footer para tener la misma estructura en todos los archivos que iba a tener la aplicación, dado que
+                cada «lugar» iba a ser puesto como un HTML diferente: <code>index.html</code>, <code>barrio.html</code>,
+                <code>pueblo.html</code>, <code>pais.html</code> e <code>instituto.html</code>.
+            </p>
+
+            <div class="row g-4 align-items-center mt-2">
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/menu.png" alt="Menú de navegación">
+                </div>
+                <div class="col-12 md:col-6">
+                    <h3 class="h5 fw-bold"><i class="bi bi-list me-2" style="color: #F08E21"
+                            aria-hidden="true"></i>Navbar principal</h3>
+                    <p class="mb-0">Navbar principal de la aplicación realizada con Bootstrap: el logo a la izquierda y
+                        los enlaces a cada página a la derecha, alineados con <code>d-flex</code>,
+                        <code>justify-content-end</code> y <code>align-items-center</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mt-4">
+                <div class="col-12 md:col-6">
+                    <h3 class="h5 fw-bold"><i class="bi bi-layout-text-window-reverse me-2" style="color: #F08E21"
+                            aria-hidden="true"></i>Footer</h3>
+                    <p class="mb-0">Footer común para todas las páginas realizado con Bootstrap: los derechos
+                        reservados centrados y, debajo, el autor y el curso repartidos en dos columnas
+                        (<code>col-6</code>).</p>
+                </div>
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/footer.png"
+                        alt="Footer de la aplicación">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PASO 2 · MODO CLARO / OSCURO ========== -->
+        <section id="paso-2" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">02</span> · Modo claro y modo oscuro</h2>
+            <p>
+                Después añadí un botón con un icono de sol/luna al final del menú. Al pulsarlo, <code>script.js</code>
+                cambia la clase del <code>&lt;body&gt;</code> entre <code>modoClaro</code> y <code>modoOscuro</code>, y
+                cada clase redefine las variables CSS <code>--bg-color</code>, <code>--text-color</code>,
+                <code>--card-bg</code> y <code>--card-text</code>. Así todos los elementos cambian de color a la vez
+                sin tocar el HTML. Para probarlo usé tarjetas de ejemplo.
+            </p>
+
+            <div class="row g-4 mt-2">
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/Claro.png"
+                        alt="Página en modo claro">
+                    <p class="small opacity-75 text-center mt-2 mb-0"><i class="bi bi-sun-fill me-1"
+                            aria-hidden="true"></i>Modo claro: fondo claro y tarjetas oscuras.</p>
+                </div>
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/oscuro.png"
+                        alt="Página en modo oscuro">
+                    <p class="small opacity-75 text-center mt-2 mb-0"><i class="bi bi-moon-fill me-1"
+                            aria-hidden="true"></i>Modo oscuro: fondo oscuro y tarjetas claras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PASO 3 · PÁGINA DE INICIO ========== -->
+        <section id="paso-3" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">03</span> · Página de inicio</h2>
+            <p>
+                Con la estructura lista, sustituí las tarjetas de ejemplo por el contenido real de la guía y pasé el
+                CSS en línea a clases de Bootstrap, dejando en CSS solo lo que Bootstrap no tiene (el naranja
+                <code>#F08E21</code>, el espaciado entre letras o la altura mínima de las fotos).
+            </p>
+
+            <div class="row g-4 align-items-center mt-2">
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/menuIndex.png"
+                        alt="Cabecera de la página de inicio">
+                </div>
+                <div class="col-12 md:col-6">
+                    <h3 class="h5 fw-bold"><i class="bi bi-house-door-fill me-2" style="color: #F08E21"
+                            aria-hidden="true"></i>Introducción y tarjetas</h3>
+                    <p class="mb-0">Una introducción «Descubre Pinto, de tu barrio al mundo» con un botón que baja a la
+                        siguiente sección, el enlace de la página actual subrayado en naranja y una tarjeta con foto
+                        por cada parada: barrio, pueblo, país e instituto.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mt-4">
+                <div class="col-12 md:col-6">
+                    <h3 class="h5 fw-bold"><i class="bi bi-signpost-split-fill me-2" style="color: #F08E21"
+                            aria-hidden="true"></i>¿Qué hay en cada página?</h3>
+                    <p class="mb-0">Tarjetas horizontales enlazadas a cada página, con una pregunta guía, etiquetas
+                        con iconos de Bootstrap Icons y un botón. Usan la rejilla de Bootstrap 6
+                        (<code>md:col-5</code> / <code>md:col-7</code>): en móvil la foto queda arriba y en escritorio
+                        al lado del texto.</p>
+                </div>
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/seccionIndex.png"
+                        alt="Sección de tarjetas horizontales">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PASO 4 · ITINERARIO ========== -->
+        <section id="paso-4" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">04</span> · Guía práctica e itinerario</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/sseccionIndex2.png"
+                        alt="Ruta día a día e imprescindibles">
+                </div>
+                <div class="col-12 md:col-6">
+                    <p>Añadí a la página de inicio la información de viaje: contexto del destino, logística y una
+                        ruta de cuatro días.</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i><strong>Ruta día a día:</strong> acordeón de Bootstrap 6, que se
+                            construye con <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code>; cada día se abre
+                            al pulsarlo.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i><strong>Imprescindibles y opcionales:</strong> dos
+                            <code>list-group</code> diferenciados con una insignia.</li>
+                        <li><i class="bi bi-check-circle-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i><strong>Tiempo libre:</strong> un bloque final que recuerda dejar
+                            huecos sin planificar.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PASO 5 · PÁGINA DEL BARRIO ========== -->
+        <section id="paso-5" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">05</span> · Página del barrio</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-12 md:col-6">
+                    <p>En la página del barrio quería que lo importante se viera de un vistazo, así que la organicé en
+                        bloques cortos con iconos en lugar de párrafos largos.</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-exclamation-circle-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i><strong>Lo que tienes que saber:</strong> un recuadro destacado
+                            con lo que sí hay y lo que no suele haber al otro lado de la vía de Renfe.</li>
+                        <li class="mb-2"><i class="bi bi-grid-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i><strong>Qué se puede hacer:</strong> seis tarjetas con planes,
+                            del Parque Fúster a escaparse a Madrid en Cercanías.</li>
+                        <li class="mb-2"><i class="bi bi-bicycle me-2" style="color: #F08E21"
+                                aria-hidden="true"></i><strong>Dato:</strong> la zona de campo para rutas en bici o a
+                            pie está justo al lado.</li>
+                        <li><i class="bi bi-building-check me-2" style="color: #F08E21"
+                                aria-hidden="true"></i><strong>Pisos nuevos:</strong> una sección aparte con la foto de
+                            las viviendas recientes y una etiqueta de «Obra nueva».</li>
+                    </ul>
+                </div>
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/pisosNuevos.png"
+                        alt="Sección de pisos nuevos de la página del barrio">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PASO 6 · EXPLORADOR DE ESTUDIOS ========== -->
+        <section id="paso-6" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">06</span> · Instituto: explorador de estudios</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/cursosCalderon.png"
+                        alt="Explorador de etapas y ciclos formativos">
+                </div>
+                <div class="col-12 md:col-6">
+                    <p>Para la página del instituto quería algo interactivo. El explorador muestra una tarjeta por
+                        enseñanza (ESO, Bachillerato, SMR, DAM y ASIR) y unos botones para filtrarlas.</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-funnel-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Cada tarjeta lleva un <code>data-categoria</code> y el JavaScript
+                            oculta las que no coinciden con el filtro, con una transición suave.</li>
+                        <li class="mb-2"><i class="bi bi-123 me-2" style="color: #F08E21" aria-hidden="true"></i>Un
+                            contador indica cuántos estudios se están mostrando.</li>
+                        <li><i class="bi bi-ui-checks me-2" style="color: #F08E21" aria-hidden="true"></i>Debajo hay un
+                            test de tres preguntas que recomienda una rama y lleva al explorador ya filtrado.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PASO 7 · MAQUETA 3D ========== -->
+        <section id="paso-7" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">07</span> · Instituto: maqueta 3D</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-12 md:col-6">
+                    <p>Por último, una maqueta 3D del centro hecha solo con CSS y JavaScript, sin librerías.</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-box-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Cada edificio es una caja con cinco caras colocadas con
+                            <code>transform</code>, <code>perspective</code> y <code>preserve-3d</code>. Las caras las
+                            crea el JavaScript a partir de atributos <code>data-</code> (posición, ancho, fondo y alto).
+                        </li>
+                        <li class="mb-2"><i class="bi bi-arrows-move me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Se gira arrastrando con el ratón o el dedo, con las flechas del
+                            teclado o con los botones de giro, zoom y giro automático.</li>
+                        <li><i class="bi bi-geo-fill me-2" style="color: #F08E21" aria-hidden="true"></i>Los números
+                            siempre miran a la cámara; al pulsarlos, la zona se pinta de naranja y el panel muestra su
+                            ficha.</li>
+                    </ul>
+                </div>
+                <div class="col-12 md:col-6">
+                    <img class="img-fluid rounded shadow" src="imagenes/explicacion/3d.png"
+                        alt="Maqueta 3D del instituto">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PASO 8 · USO DE LA IA ========== -->
+        <section id="paso-8" class="py-5 border-top">
+            <h2 class="h3 fw-bold mb-3"><span style="color: #F08E21">08</span> · Uso de la inteligencia artificial</h2>
+            <p>Durante el desarrollo me apoyé en dos asistentes de IA, <strong>Claude</strong> y
+                <strong>Gemini</strong>,
+                para generar código, redactar textos y resolver dudas. Estas capturas muestran las peticiones que hice y
+                para qué usé cada respuesta, ordenadas por página.</p>
+
+            <h3 class="h5 fw-bold mt-5 mb-3"><i class="bi bi-house-door-fill me-2" style="color: #F08E21"
+                    aria-hidden="true"></i>Página de inicio</h3>
+            <div class="row g-4">
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top"
+                            src="imagenes/explicacion/IA/remodelacion-claude-index.png"
+                            alt="Petición a Claude para el index">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Guía turística en el index</strong>
+                            </div>
+                            <p class="small opacity-75 mb-0">Le pedí el código del index para convertirlo en una guía
+                                turística que hablara de cada página, sin modificar lo que ya tenía.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top"
+                            src="imagenes/explicacion/IA/respuesta-claude.png"
+                            alt="Código del index generado por Claude">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Código del index</strong></div>
+                            <p class="small opacity-75 mb-0">La respuesta: el index completo, con la cabecera responsive
+                                y las clases de Bootstrap 6 (md:col-*).</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top" src="imagenes/explicacion/IA/claude-index.png"
+                            alt="Petición con los apartados de la guía">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Contenido de la guía</strong></div>
+                            <p class="small opacity-75 mb-0">Le pasé los apartados que debía tener la guía: contexto del
+                                destino, itinerario y logística.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top"
+                            src="imagenes/explicacion/IA/claude-quitaCosas.png" alt="Petición para quitar las paradas">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Quitar las «paradas»</strong></div>
+                            <p class="small opacity-75 mb-0">Le pedí quitar los círculos de «Parada 1…4» y pasar el CSS
+                                a Bootstrap manteniendo el mismo estilo.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top" src="imagenes/explicacion/IA/rutaDia-Claude.png"
+                            alt="Ruta de cuatro días">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Ruta de 4 días</strong></div>
+                            <p class="small opacity-75 mb-0">Amplié el itinerario de dos a cuatro días, con excursiones
+                                a Aranjuez y Madrid.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <h3 class="h5 fw-bold mt-5 mb-3"><i class="bi bi-buildings-fill me-2" style="color: #F08E21"
+                    aria-hidden="true"></i>Página del pueblo</h3>
+            <div class="row g-4">
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top"
+                            src="imagenes/explicacion/IA/Gemini-Carrusel.png" alt="Petición a Gemini para el carrusel">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1 border"><i class="bi bi-google me-1"
+                                        aria-hidden="true"></i>Gemini</span><strong>Carrusel de datos</strong></div>
+                            <p class="small opacity-75 mb-0">A partir de una captura, le pedí el componente de tarjetas
+                                con una animación que fuera de lado a lado de la pantalla.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <h3 class="h5 fw-bold mt-5 mb-3"><i class="bi bi-tree-fill me-2" style="color: #F08E21"
+                    aria-hidden="true"></i>Página del barrio</h3>
+            <div class="row g-4">
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top"
+                            src="imagenes/explicacion/IA/Card-Textos-Barrio.png"
+                            alt="Textos para las tarjetas del barrio">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1 border"><i class="bi bi-google me-1"
+                                        aria-hidden="true"></i>Gemini</span><strong>Textos de las tarjetas</strong>
+                            </div>
+                            <p class="small opacity-75 mb-0">Le pedí títulos y textos para las tarjetas del barrio
+                                Nicolás Fúster.</p>
+                            <p class="small mt-2 mb-0 border-top pt-2"><i class="bi bi-exclamation-triangle-fill me-1"
+                                    style="color: #F08E21" aria-hidden="true"></i>Gemini cambió md:col-* por col-md-*,
+                                que es la sintaxis de Bootstrap 5; en Bootstrap 6, que es el que uso, la correcta es
+                                md:col-*.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top" src="imagenes/explicacion/IA/pisosNuevosIA.png"
+                            alt="Petición de la sección de pisos nuevos">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Pisos nuevos</strong></div>
+                            <p class="small opacity-75 mb-0">Una sección aparte para indicar que los pisos de la tarjeta
+                                son de construcción reciente.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <h3 class="h5 fw-bold mt-5 mb-3"><i class="bi bi-mortarboard-fill me-2" style="color: #F08E21"
+                    aria-hidden="true"></i>Página del instituto</h3>
+            <div class="row g-4">
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top"
+                            src="imagenes/explicacion/IA/promptInstituto.png"
+                            alt="Petición de una sección para el instituto">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Añadir una sección</strong></div>
+                            <p class="small opacity-75 mb-0">Como ya tenía tarjetas y el carrusel, le pedí solo el
+                                código de una sección nueva, sin rehacer la página.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top"
+                            src="imagenes/explicacion/IA/seccionInstituto.png"
+                            alt="Archivos de la sección del instituto">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Explorador y test</strong></div>
+                            <p class="small opacity-75 mb-0">La respuesta: el HTML de la sección, el CSS para styles.css
+                                y el JavaScript para script.js.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-12 md:col-6">
+                    <figure class="h-100 border rounded p-3 mb-0">
+                        <img class="w-100 rounded shadow mb-3 object-fit-cover"
+                            style="height: 260px; object-position: top" src="imagenes/explicacion/IA/imagen3d.png"
+                            alt="Petición de la maqueta 3D">
+                        <figcaption>
+                            <div class="d-flex align-items-center gap-2 mb-1"><span
+                                    class="rounded-pill small fw-bold px-2 py-1"
+                                    style="background-color: #F08E21; color: #121212"><i class="bi bi-stars me-1"
+                                        aria-hidden="true"></i>Claude</span><strong>Maqueta 3D</strong></div>
+                            <p class="small opacity-75 mb-0">Le pedí una imagen 3D del centro explicando las
+                                instalaciones; la hizo con CSS y JavaScript, sin librerías.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== HERRAMIENTAS ========== -->
+        <section class="py-5 border-top text-center">
+            <h2 class="h4 fw-bold mb-3">Tecnologías utilizadas</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <span class="border rounded-pill px-3 py-1"><i class="bi bi-filetype-html me-1" style="color: #F08E21"
+                        aria-hidden="true"></i>HTML5</span>
+                <span class="border rounded-pill px-3 py-1"><i class="bi bi-filetype-css me-1" style="color: #F08E21"
+                        aria-hidden="true"></i>CSS3</span>
+                <span class="border rounded-pill px-3 py-1"><i class="bi bi-bootstrap-fill me-1" style="color: #F08E21"
+                        aria-hidden="true"></i>Bootstrap 6</span>
+                <span class="border rounded-pill px-3 py-1"><i class="bi bi-emoji-smile-fill me-1"
+                        style="color: #F08E21" aria-hidden="true"></i>Bootstrap Icons</span>
+                <span class="border rounded-pill px-3 py-1"><i class="bi bi-filetype-js me-1" style="color: #F08E21"
+                        aria-hidden="true"></i>JavaScript</span>
+                <span class="border rounded-pill px-3 py-1"><i class="bi bi-stars me-1" style="color: #F08E21"
+                        aria-hidden="true"></i>Claude y Gemini</span>
+            </div>
+            <a href="index.html" class="d-inline-block mt-4 rounded-pill px-4 py-2 fw-semibold text-decoration-none"
+                style="background-color: #F08E21; color: #121212;">
+                <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Volver a la guía
+            </a>
+        </section>
+
+    </main>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

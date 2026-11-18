@@ -1,0 +1,397 @@
+#seccion-maqueta {
+    --maq-acento: #F08E21;
+    color: var(--text-color);
+}
+
+#seccion-maqueta .maq-sobretitulo {
+    color: var(--maq-acento);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* ---------- Visor ---------- */
+#seccion-maqueta .maq-visor {
+    position: relative;
+    height: 100%;
+    min-height: 440px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 30%, rgba(240, 142, 33, 0.18), transparent 70%),
+        var(--card-bg);
+    color: var(--card-text);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+}
+
+#seccion-maqueta .maq-visor:focus-visible {
+    outline: 3px solid var(--maq-acento);
+    outline-offset: 3px;
+}
+
+#seccion-maqueta .maq-visor.arrastrando {
+    cursor: grabbing;
+}
+
+#seccion-maqueta .maq-escena {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1600px;
+}
+
+#seccion-maqueta .maq-mundo {
+    --rx: 58deg;
+    --rz: -30deg;
+    --escala: 1;
+    position: relative;
+    flex: none;
+    width: 600px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: translateY(10px) scale(var(--escala)) rotateX(var(--rx)) rotateZ(var(--rz));
+    transition: transform 0.5s ease;
+}
+
+#seccion-maqueta .maq-visor.arrastrando .maq-mundo,
+#seccion-maqueta .maq-visor.girando .maq-mundo {
+    transition: none;
+}
+
+/* ---------- Cajas 3D (las caras las crea script.js) ---------- */
+#seccion-maqueta .maq-caja {
+    position: absolute;
+    left: calc(var(--x) * 1px);
+    top: calc(var(--y) * 1px);
+    width: calc(var(--w) * 1px);
+    height: calc(var(--d) * 1px);
+    --c: var(--color);
+    --techo: var(--color-techo);
+    transform-style: preserve-3d;
+    transform: translateZ(14px);
+}
+
+#seccion-maqueta .maq-base {
+    --color: #7d6a55;
+    --color-techo: #8fb174;
+    transform: none;
+}
+
+#seccion-maqueta .maq-cara {
+    position: absolute;
+    background-color: var(--c);
+    transition: background-color 0.3s ease;
+}
+
+#seccion-maqueta .maq-cara--techo {
+    inset: 0;
+    background-color: var(--techo);
+    transform: translateZ(calc(var(--h) * 1px));
+}
+
+#seccion-maqueta .maq-cara--frente {
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: calc(var(--h) * 1px);
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+#seccion-maqueta .maq-cara--fondo {
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    height: calc(var(--h) * 1px);
+    transform-origin: bottom;
+    transform: rotateX(-90deg);
+    box-shadow: inset 0 0 0 999px rgba(0, 0, 0, 0.3);
+}
+
+#seccion-maqueta .maq-cara--izq {
+    top: 0;
+    right: 100%;
+    width: calc(var(--h) * 1px);
+    height: 100%;
+    transform-origin: right;
+    transform: rotateY(90deg);
+    box-shadow: inset 0 0 0 999px rgba(0, 0, 0, 0.15);
+}
+
+#seccion-maqueta .maq-cara--der {
+    top: 0;
+    left: 100%;
+    width: calc(var(--h) * 1px);
+    height: 100%;
+    transform-origin: left;
+    transform: rotateY(-90deg);
+    box-shadow: inset 0 0 0 999px rgba(0, 0, 0, 0.25);
+}
+
+/* Ventanas en las fachadas de los edificios */
+#seccion-maqueta .maq-edificio .maq-cara:not(.maq-cara--techo) {
+    background-image:
+        repeating-linear-gradient(to bottom, var(--c) 0 9px, transparent 9px 21px, var(--c) 21px 30px),
+        repeating-linear-gradient(to right, var(--c) 0 9px, rgba(70, 110, 150, 0.85) 9px 21px);
+}
+
+/* Césped de la base y marcas de la pista */
+#seccion-maqueta .maq-base .maq-cara--techo {
+    border-radius: 2px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 14px 14px;
+}
+
+#seccion-maqueta .maq-pista .maq-cara--techo {
+    outline: 3px solid #fff;
+    outline-offset: -10px;
+    background-image:
+        linear-gradient(to right, transparent calc(50% - 1.5px), #fff calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+        radial-gradient(circle at 50% 50%, transparent 24px, #fff 25px 27px, transparent 28px);
+}
+
+/* Zona seleccionada */
+#seccion-maqueta .maq-caja[data-zona] {
+    cursor: pointer;
+}
+
+#seccion-maqueta .maq-caja.activa {
+    --c: #f6b46b;
+    --techo: var(--maq-acento);
+}
+
+#seccion-maqueta .maq-pista.activa,
+#seccion-maqueta .maq-camino.activa {
+    --c: var(--maq-acento);
+}
+
+/* ---------- Marcadores numerados (siempre de cara a la cámara) ---------- */
+#seccion-maqueta .maq-pin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: #121212;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateZ(calc(var(--h) * 1px + 34px)) rotateZ(calc(var(--rz) * -1)) rotateX(calc(var(--rx) * -1)) scale(max(1, calc(0.75 / var(--escala))));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+#seccion-maqueta .maq-pin:focus-visible {
+    outline: 3px solid var(--maq-acento);
+    outline-offset: 2px;
+}
+
+#seccion-maqueta .maq-caja.activa .maq-pin {
+    background-color: var(--maq-acento);
+    color: #121212;
+    animation: maq-latido 1.4s ease-in-out infinite;
+}
+
+@keyframes maq-latido {
+    50% {
+        box-shadow: 0 0 0 10px rgba(240, 142, 33, 0.25);
+    }
+}
+
+/* ---------- Árboles ---------- */
+#seccion-maqueta .maq-arbol {
+    position: absolute;
+    left: calc(var(--x) * 1px);
+    top: calc(var(--y) * 1px);
+    width: 30px;
+    height: 44px;
+    margin: -44px 0 0 -15px;
+    transform-origin: bottom center;
+    transform: translateZ(14px) rotateZ(calc(var(--rz) * -1)) rotateX(-90deg);
+    background:
+        radial-gradient(circle at 50% 35%, #5f9b4c 0 13px, transparent 14px),
+        linear-gradient(to right, transparent 13px, #6d4c35 13px 17px, transparent 17px);
+    pointer-events: none;
+}
+
+/* ---------- Controles ---------- */
+#seccion-maqueta .maq-controles {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+#seccion-maqueta .maq-control {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#seccion-maqueta .maq-control:hover,
+#seccion-maqueta .maq-control[aria-pressed="true"] {
+    background-color: var(--maq-acento);
+    border-color: var(--maq-acento);
+    color: #121212;
+}
+
+#seccion-maqueta .maq-ayuda {
+    position: absolute;
+    left: 0.9rem;
+    bottom: 0.9rem;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* ---------- Panel ---------- */
+#seccion-maqueta .maq-panel {
+    border-radius: 1rem;
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+#seccion-maqueta .maq-panel article {
+    animation: maq-aparecer 0.3s ease;
+}
+
+@keyframes maq-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+#seccion-maqueta .maq-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--maq-acento);
+    color: #121212;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+#seccion-maqueta .maq-anio {
+    display: inline-block;
+    margin-left: 0.5rem;
+    border: 1px solid var(--maq-acento);
+    border-radius: 50rem;
+    color: var(--maq-acento);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.15rem 0.7rem;
+    vertical-align: middle;
+}
+
+#seccion-maqueta .maq-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#seccion-maqueta .maq-lista li {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+    font-size: 0.9rem;
+}
+
+#seccion-maqueta .maq-lista i {
+    color: var(--maq-acento);
+}
+
+#seccion-maqueta .maq-zona-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 2px solid var(--maq-acento);
+    border-radius: 50rem;
+    background-color: transparent;
+    color: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem 0.3rem 0.35rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#seccion-maqueta .maq-zona-boton span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--maq-acento);
+    color: #121212;
+    font-size: 0.75rem;
+}
+
+#seccion-maqueta .maq-zona-boton:hover,
+#seccion-maqueta .maq-zona-boton.activo {
+    background-color: var(--maq-acento);
+    color: #121212;
+}
+
+#seccion-maqueta .maq-zona-boton.activo span {
+    background-color: #121212;
+    color: #fff;
+}
+
+#seccion-maqueta .maq-zona-boton:focus-visible {
+    outline: 3px solid var(--maq-acento);
+    outline-offset: 2px;
+}
+
+@media (max-width: 575px) {
+    #seccion-maqueta .maq-visor {
+        min-height: 340px;
+    }
+
+    #seccion-maqueta .maq-controles {
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    #seccion-maqueta .maq-control {
+        width: 34px;
+        height: 34px;
+    }
+
+    #seccion-maqueta .maq-ayuda {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #seccion-maqueta *,
+    #seccion-maqueta .maq-mundo {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modelo.css">
     <link rel="icon" type="image/png" href="imagenes/_123049.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -36,7 +37,7 @@
             <div class="card-body">
                 <h5 class="card-title">Instalaciones del Centro</h5>
                 <p class="card-text">Espacios amplios y adaptados para la vida académica y el día a día del alumnado en Pinto.</p>
-                <a href="" class="btn mt-auto">Ver más</a>
+                
             </div>
         </div>
         <div class="card col-10 md:col-2 d-flex justify-content-center align-items-start">
@@ -44,7 +45,7 @@
             <div class="card-body">
                 <h5 class="card-title">Innovación Tecnológica</h5>
                 <p class="card-text">Referente educativo en innovación tecnológica, TIC y desarrollo informático.</p>
-                <a href="" class="btn mt-auto">Ver más</a>
+                
             </div>
         </div>
         <div class="card col-10 md:col-3 d-flex justify-content-center align-items-start">
@@ -52,7 +53,7 @@
             <div class="card-body">
                 <h5 class="card-title">Aulas Especializadas</h5>
                 <p class="card-text">Clases dotadas de equipamiento técnico para la formación profesional y el estudio avanzado.</p>
-                <a href="" class="btn mt-auto">Ver más</a>
+                
             </div>
         </div>
         <div class="card col-10 md:col-3 d-flex justify-content-center align-items-start">
@@ -60,7 +61,7 @@
             <div class="card-body">
                 <h5 class="card-title">Formación y Proyectos</h5>
                 <p class="card-text">Ciclos formativos, participación en programas europeos como Erasmus+ y excelencia educativa.</p>
-                <a href="" class="btn mt-auto">Ver más</a>
+                
             </div>
         </div>
     </div>
@@ -150,6 +151,181 @@
             </div>
         </div>
     </section>
+    <section id="seccion-maqueta" class="container py-5">
+    
+        <div class="text-center mb-4">
+            <p class="maq-sobretitulo mb-2">Recorrido virtual</p>
+            <h2 class="fw-bold mb-2">El instituto en 3D</h2>
+            <p class="opacity-75 mb-0">Gira la maqueta arrastrando y pulsa los números para conocer cada instalación.</p>
+        </div>
+    
+        <div class="row g-4 align-items-stretch">
+    
+            <!-- VISOR 3D -->
+            <div class="col-12 col-lg-7 lg:col-7">
+                <div class="maq-visor" data-visor tabindex="0" role="application"
+                    aria-label="Maqueta 3D del IES Calderón de la Barca. Arrastra o usa las flechas del teclado para girarla.">
+    
+                    <div class="maq-escena">
+                        <div class="maq-mundo" data-mundo>
+    
+                            <!-- Base de la parcela -->
+                            <div class="maq-caja maq-base" data-x="0" data-y="0" data-w="600" data-d="400" data-h="14">
+                            </div>
+    
+                            <!-- Edificios y zonas (x, y, ancho, fondo y alto en px) -->
+                            <div class="maq-caja maq-edificio" data-zona="principal" data-num="1" data-x="40" data-y="40"
+                                data-w="250" data-d="90" data-h="66" style="--color: #eadfce; --color-techo: #b8ab98"></div>
+    
+                            <div class="maq-caja maq-edificio" data-zona="bachillerato" data-num="2" data-x="340"
+                                data-y="40" data-w="220" data-d="80" data-h="96"
+                                style="--color: #dfe4ea; --color-techo: #9aa5b1"></div>
+    
+                            <div class="maq-caja maq-edificio" data-zona="fp" data-num="3" data-x="480" data-y="120"
+                                data-w="80" data-d="110" data-h="64" style="--color: #d3dbe4; --color-techo: #8794a3"></div>
+    
+                            <div class="maq-caja maq-pista" data-zona="pista" data-num="4" data-x="50" data-y="200"
+                                data-w="250" data-d="150" data-h="2" style="--color: #3f7fa6; --color-techo: #3f7fa6"></div>
+    
+                            <div class="maq-caja maq-camino" data-zona="acceso" data-num="5" data-x="380" data-y="300"
+                                data-w="44" data-d="100" data-h="2" style="--color: #c9c3b8; --color-techo: #c9c3b8"></div>
+    
+                            <!-- Árboles decorativos (x, y) -->
+                            <span class="maq-arbol" data-x="340" data-y="270"></span>
+                            <span class="maq-arbol" data-x="455" data-y="280"></span>
+                            <span class="maq-arbol" data-x="345" data-y="360"></span>
+                            <span class="maq-arbol" data-x="460" data-y="355"></span>
+                            <span class="maq-arbol" data-x="540" data-y="290"></span>
+                            <span class="maq-arbol" data-x="320" data-y="170"></span>
+                        </div>
+                    </div>
+    
+                    <!-- Controles -->
+                    <div class="maq-controles" role="toolbar" aria-label="Controles de la maqueta">
+                        <button type="button" class="maq-control" data-accion="izquierda" title="Girar a la izquierda"
+                            aria-label="Girar a la izquierda"><i class="bi bi-arrow-counterclockwise"
+                                aria-hidden="true"></i></button>
+                        <button type="button" class="maq-control" data-accion="derecha" title="Girar a la derecha"
+                            aria-label="Girar a la derecha"><i class="bi bi-arrow-clockwise"
+                                aria-hidden="true"></i></button>
+                        <button type="button" class="maq-control" data-accion="acercar" title="Acercar"
+                            aria-label="Acercar"><i class="bi bi-zoom-in" aria-hidden="true"></i></button>
+                        <button type="button" class="maq-control" data-accion="alejar" title="Alejar" aria-label="Alejar"><i
+                                class="bi bi-zoom-out" aria-hidden="true"></i></button>
+                        <button type="button" class="maq-control" data-accion="auto" title="Giro automático"
+                            aria-label="Activar giro automático" aria-pressed="false"><i class="bi bi-play-fill"
+                                aria-hidden="true"></i></button>
+                        <button type="button" class="maq-control" data-accion="reiniciar" title="Vista inicial"
+                            aria-label="Volver a la vista inicial"><i class="bi bi-bullseye"
+                                aria-hidden="true"></i></button>
+                    </div>
+    
+                    <p class="maq-ayuda small mb-0"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Arrastra
+                        para girar</p>
+                </div>
+            </div>
+    
+            <!-- PANEL DE INFORMACIÓN -->
+            <div class="col-12 col-lg-5 lg:col-5 d-flex flex-column gap-3">
+    
+                <div class="maq-zonas d-flex flex-wrap gap-2" role="group" aria-label="Instalaciones">
+                    <button type="button" class="maq-zona-boton" data-ir="principal"><span>1</span>Edificio
+                        principal</button>
+                    <button type="button" class="maq-zona-boton" data-ir="bachillerato"><span>2</span>Bachillerato</button>
+                    <button type="button" class="maq-zona-boton" data-ir="fp"><span>3</span>Ciclos de FP</button>
+                    <button type="button" class="maq-zona-boton" data-ir="pista"><span>4</span>Pista deportiva</button>
+                    <button type="button" class="maq-zona-boton" data-ir="acceso"><span>5</span>Acceso</button>
+                </div>
+    
+                <div class="maq-panel flex-grow-1 p-4" aria-live="polite">
+    
+                    <article data-ficha="inicio">
+                        <span class="maq-icono mb-3"><i class="bi bi-buildings-fill" aria-hidden="true"></i></span>
+                        <h3 class="h4 fw-bold">Un centro en tres fases</h3>
+                        <p>El instituto abrió en 2008 y ha crecido a la vez que Pinto: primero el edificio de ESO, en 2012
+                            el de Bachillerato y en 2019 la ampliación para los ciclos de Informática.</p>
+                        <p class="small mb-0 opacity-75">Elige un número en la maqueta o en los botones de arriba.</p>
+                    </article>
+    
+                    <article data-ficha="principal" hidden>
+                        <span class="maq-icono mb-3"><i class="bi bi-building-fill" aria-hidden="true"></i></span>
+                        <span class="maq-anio">2008</span>
+                        <h3 class="h4 fw-bold mt-2">Edificio principal</h3>
+                        <p>Es el edificio con el que abrió el instituto, pensado para los grupos de ESO.</p>
+                        <ul class="maq-lista">
+                            <li><i class="bi bi-pc-display" aria-hidden="true"></i>Aulas con ordenadores y herramientas TIC,
+                                como Instituto de Innovación Tecnológica.</li>
+                            <li><i class="bi bi-people-fill" aria-hidden="true"></i>Dos aulas cooperativas con mesas
+                                hexagonales y portátiles.</li>
+                            <li><i class="bi bi-heart-fill" aria-hidden="true"></i>Aula «Planeta azul» de apoyo al alumnado
+                                con TEA.</li>
+                        </ul>
+                    </article>
+    
+                    <article data-ficha="bachillerato" hidden>
+                        <span class="maq-icono mb-3"><i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i></span>
+                        <span class="maq-anio">2012</span>
+                        <h3 class="h4 fw-bold mt-2">Edificio de Bachillerato</h3>
+                        <p>Llegó con la segunda fase de obras, para dar espacio propio al Bachillerato.</p>
+                        <ul class="maq-lista">
+                            <li><i class="bi bi-easel-fill" aria-hidden="true"></i>La obra incluía 6 aulas nuevas.</li>
+                            <li><i class="bi bi-eyedropper" aria-hidden="true"></i>Y 3 laboratorios para las materias de
+                                ciencias.</li>
+                        </ul>
+                    </article>
+    
+                    <article data-ficha="fp" hidden>
+                        <span class="maq-icono mb-3"><i class="bi bi-code-slash" aria-hidden="true"></i></span>
+                        <span class="maq-anio">2019</span>
+                        <h3 class="h4 fw-bold mt-2">Ampliación de FP</h3>
+                        <p>La tercera fase amplió el edificio de Bachillerato para acoger los ciclos de Informática y
+                            Comunicaciones.</p>
+                        <ul class="maq-lista">
+                            <li><i class="bi bi-hdd-network-fill" aria-hidden="true"></i>Grado Medio: Sistemas
+                                Microinformáticos y Redes (SMR).</li>
+                            <li><i class="bi bi-phone-fill" aria-hidden="true"></i>Grado Superior: Desarrollo de
+                                Aplicaciones Multiplataforma (DAM).</li>
+                            <li><i class="bi bi-server" aria-hidden="true"></i>Grado Superior: Administración de Sistemas
+                                Informáticos en Red (ASIR).</li>
+                        </ul>
+                    </article>
+    
+                    <article data-ficha="pista" hidden>
+                        <span class="maq-icono mb-3"><i class="bi bi-dribbble" aria-hidden="true"></i></span>
+                        <h3 class="h4 fw-bold mt-2">Pista deportiva</h3>
+                        <p>Espacio exterior para Educación Física y los recreos.</p>
+                        <ul class="maq-lista">
+                            <li><i class="bi bi-cone-striped" aria-hidden="true"></i>La Comunidad de Madrid ha licitado una
+                                nueva ampliación con 9 aulas más y una pista deportiva.</li>
+                        </ul>
+                    </article>
+    
+                    <article data-ficha="acceso" hidden>
+                        <span class="maq-icono mb-3"><i class="bi bi-universal-access" aria-hidden="true"></i></span>
+                        <h3 class="h4 fw-bold mt-2">Acceso y accesibilidad</h3>
+                        <p>Calle Francisco Bores, 3 · 28320 Pinto, en el barrio de La Tenería.</p>
+                        <ul class="maq-lista">
+                            <li><i class="bi bi-person-wheelchair" aria-hidden="true"></i>Todas las instalaciones están
+                                adaptadas para alumnado con dificultades motoras.</li>
+                            <li><i class="bi bi-train-front-fill" aria-hidden="true"></i>Se llega en Cercanías C-3 hasta la
+                                estación de Pinto.</li>
+                        </ul>
+                    </article>
+    
+                </div>
+            </div>
+        </div>
+    
+        <p class="small opacity-75 text-center mt-3 mb-0">
+            <i class="bi bi-info-circle me-1" aria-hidden="true"></i>Maqueta orientativa: muestra los edificios y sus fases,
+            no el plano real del centro.
+        </p>
+    </section>
+
+
+
+
+
     <section id="seccion-instituto">
     
         <!-- ========== INTERACTIVO 1 · EXPLORADOR DE ESTUDIOS ========== -->
@@ -399,5 +575,6 @@
     integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
     crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script src="modelo.js"></script>
 </body>
 </html>
