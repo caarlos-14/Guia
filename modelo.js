@@ -1,3 +1,7 @@
+/* =====================================================
+   INSTITUTO · MAQUETA 3D — añadir al final de script.js
+   Solo se ejecuta si existe #seccion-maqueta en la página.
+   ===================================================== */
 (function () {
     function iniciarMaqueta() {
         const seccion = document.querySelector('#seccion-maqueta');
@@ -7,11 +11,12 @@
         const mundo = seccion.querySelector('[data-mundo]');
         if (!visor || !mundo) return;
 
-        const ANCHO_MUNDO = 600;
+        const ANCHO_MUNDO = 720;
         const vista = { rz: -30, rx: 58, zoom: 1, base: 1 };
         const INICIAL = { rz: -30, rx: 58, zoom: 1 };
 
         /* ---------- 1. Construir las cajas 3D y los marcadores ---------- */
+        const pines = [];
         mundo.querySelectorAll('.maq-caja').forEach(function (caja) {
             ['x', 'y', 'w', 'd', 'h'].forEach(function (clave) {
                 caja.style.setProperty('--' + clave, caja.dataset[clave] || 0);
@@ -21,19 +26,28 @@
                 cara.className = 'maq-cara maq-cara--' + lado;
                 caja.appendChild(cara);
             });
-            if (caja.dataset.zona) {
+            // El marcador va al final del mundo (no dentro de la caja) para quedar siempre por encima al pulsar
+            if (caja.dataset.zona && caja.dataset.num) {
+                const x = Number(caja.dataset.x) || 0;
+                const y = Number(caja.dataset.y) || 0;
                 const pin = document.createElement('button');
                 pin.type = 'button';
                 pin.className = 'maq-pin';
-                pin.textContent = caja.dataset.num || '';
+                pin.textContent = caja.dataset.num;
                 pin.dataset.ir = caja.dataset.zona;
+                pin.style.setProperty('--x', x + (Number(caja.dataset.w) || 0) / 2);
+                pin.style.setProperty('--y', y + (Number(caja.dataset.d) || 0) / 2);
+                pin.style.setProperty('--h', (Number(caja.dataset.h) || 0) + 14);
                 const ficha = seccion.querySelector('[data-ficha="' + caja.dataset.zona + '"] h3');
                 pin.setAttribute('aria-label', ficha ? ficha.textContent : caja.dataset.zona);
-                caja.appendChild(pin);
+                pines.push(pin);
             }
         });
+        pines.forEach(function (pin) {
+            mundo.appendChild(pin);
+        });
 
-        mundo.querySelectorAll('.maq-arbol').forEach(function (arbol) {
+        mundo.querySelectorAll('.maq-arbol, .maq-canasta').forEach(function (arbol) {
             arbol.style.setProperty('--x', arbol.dataset.x || 0);
             arbol.style.setProperty('--y', arbol.dataset.y || 0);
         });
@@ -127,6 +141,9 @@
             });
             mundo.querySelectorAll('.maq-caja[data-zona]').forEach(function (caja) {
                 caja.classList.toggle('activa', caja.dataset.zona === zona);
+            });
+            mundo.querySelectorAll('.maq-pin').forEach(function (pin) {
+                pin.classList.toggle('activo', pin.dataset.ir === zona);
             });
             seccion.querySelectorAll('.maq-zona-boton').forEach(function (boton) {
                 const activo = boton.dataset.ir === zona;

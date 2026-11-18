@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,969 +11,1340 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 </head>
+
 <body>
 <header class="container-fluid py-2">
-    <div class="d-flex flex-column md:flex-row align-items-center md:justify-content-between gap-2">
-        <a href="index.html">
-            <img class="logo"
-                src="imagenes/a-vector-illustration-of-backpack-traveler-and-moon-logo-sign-in-orange-and-black-color-2CT8E26-removebg-preview.png"
-                alt="Logo de la guía">
-        </a>
-        <nav class="d-flex flex-wrap justify-content-center md:justify-content-end align-items-center">
-            <a class="text-decoration-none m-2 lg:m-3" href="index.html">Inicio</a>
-            <a class="text-decoration-none m-2 lg:m-3" href="barrio.html">Barrio</a>
-            <a class="text-decoration-none m-2 lg:m-3" href="pueblo.html">Pueblo</a>
-            <a class="text-decoration-none m-2 lg:m-3" href="pais.html">País</a>
-            <a class="text-decoration-none m-2 lg:m-3" href="instituto.html">Instituto</a>
-            <a href="#" class="modo m-2 lg:m-3" aria-label="Cambiar modo claro/oscuro"><i
-                    class="iconoModo bi bi-sun-fill"></i></a>
-        </nav>
-    </div>
+    <nav class="navbar md:navbar-expand" aria-label="Navegación principal"
+        style="--bs-navbar-bg: transparent; --bs-navbar-color: var(--text-color); --bs-navbar-hover-color: #F08E21; --bs-navbar-active-color: #F08E21">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo"
+                    src="imagenes/a-vector-illustration-of-backpack-traveler-and-moon-logo-sign-in-orange-and-black-color-2CT8E26-removebg-preview.png"
+                    alt="Logo de la guía">
+            </a>
+
+            <!-- Botón hamburguesa (solo en pantallas pequeñas) -->
+            <button class="navbar-toggler rounded-3 px-2 py-1" type="button" data-bs-toggle="drawer"
+                data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-label="Abrir el menú"
+                style="background: transparent; color: var(--text-color); border: 2px solid #F08E21">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú: panel lateral en móvil, fila de enlaces en escritorio -->
+            <dialog class="drawer drawer-end" id="menuPrincipal" aria-labelledby="menuPrincipalTitulo"
+                style="--bs-drawer-bg: var(--bg-color); --bs-drawer-color: var(--text-color); --bs-drawer-width: 280px">
+                <div class="drawer-header d-flex justify-content-between align-items-center">
+                    <h2 class="drawer-title h5 mb-0" id="menuPrincipalTitulo">Menú</h2>
+                    <button type="button" class="border-0 bg-transparent fs-xl" data-bs-dismiss="drawer"
+                        aria-label="Cerrar el menú" style="color: var(--text-color)"><i class="bi bi-x-lg"
+                            aria-hidden="true"></i></button>
+                </div>
+                <div class="drawer-body">
+                    <ul class="navbar-nav md:ms-auto align-items-start md:align-items-center gap-1 lg:gap-3">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="barrio.html">Barrio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pueblo.html">Pueblo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="instituto.html">Instituto</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link modo" aria-label="Cambiar modo claro/oscuro"><i
+                                    class="iconoModo bi bi-sun-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </dialog>
+        </div>
+    </nav>
 </header>
-<main class="container-fluid">
-    <div class="row g-5 justify-content-center gap-2 mb-5">
-        <div class="card col-10 md:col-2 d-flex justify-content-start align-items-center pt-3">
-            <img src="imagenes/torre.jpeg" alt="Monumentos" width="80px">
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Patrimonio</h5>
-                <p class="card-text">La Torre de Éboli, la Iglesia de Santo Domingo de Silos y el casco antiguo.</p>
-                <a href="#rep-patrimonio" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
+    <main class="container-fluid">
+        <div class="row g-5 justify-content-center gap-2 mb-5">
+            <div class="card col-10 md:col-2 d-flex justify-content-start align-items-center pt-3">
+                <img src="imagenes/torre.jpeg" alt="Monumentos" width="80px">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Patrimonio</h5>
+                    <p class="card-text">La Torre de Éboli, la Iglesia de Santo Domingo de Silos y el casco antiguo.</p>
+                    <a href="#rep-patrimonio" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i
+                            class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
+                </div>
             </div>
+
+            <div class="card col-10 md:col-3 d-flex justify-content-center align-items-center pt-3">
+                <img src="imagenes/punctum.jpg" alt="Historia de Pinto" width="80px">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Historia y Origen</h5>
+                    <p class="card-text">Origen vinculado al "Punctum" como centro geográfico de la Península Ibérica y
+                        su
+                        evolución.</p>
+                    <a href="#rep-historia" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i
+                            class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="card col-10 md:col-3 d-flex justify-content-center align-items-center pt-3">
+                <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="Fiestas" width="80px">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Fiestas</h5>
+                    <p class="card-text">Festividades patronales, tradiciones y celebraciones del municipio.</p>
+                    <a href="#rep-fiestas" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i
+                            class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+
+            <div class="card col-10 md:col-3 d-flex justify-content-start align-items-center pt-3">
+                <img src="imagenes/juan.jpeg" alt="Ocio y Parques" width="80px">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Ocio y Zonas Verdes</h5>
+                    <p class="card-text">Espacios deportivos, gastronomía y grandes parques como el Juan Carlos I.</p>
+                    <a href="#rep-ocio" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i
+                            class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card col-10 md:col-3 d-flex justify-content-center align-items-center pt-3">
-            <img src="imagenes/punctum.jpg" alt="Historia de Pinto" width="80px">
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Historia y Origen</h5>
-                <p class="card-text">Origen vinculado al "Punctum" como centro geográfico de la Península Ibérica y su
-                    evolución.</p>
-                <a href="#rep-historia" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
-            </div>
-        </div>
-
-        <div class="card col-10 md:col-3 d-flex justify-content-center align-items-center pt-3">
-            <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="Fiestas" width="80px">
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Fiestas</h5>
-                <p class="card-text">Festividades patronales, tradiciones y celebraciones del municipio.</p>
-                <a href="#rep-fiestas" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
-            </div>
-        </div>
 
 
-        <div class="card col-10 md:col-3 d-flex justify-content-start align-items-center pt-3">
-            <img src="imagenes/juan.jpeg" alt="Ocio y Parques" width="80px">
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Ocio y Zonas Verdes</h5>
-                <p class="card-text">Espacios deportivos, gastronomía y grandes parques como el Juan Carlos I.</p>
-                <a href="#rep-ocio" class="btn rounded-pill mt-auto align-self-start">Leer reportaje <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
-            </div>
-        </div>
+        <section class="marquee-wrapper mb-4">
+            <div class="marquee-track">
+                <!-- Bloque 1 -->
+                <div class="marquee-group">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">POBLACIÓN ACTIVA</span>
+                            <i class="bi bi-people stat-icon"></i>
+                        </div>
+                        <div class="stat-value">56.651</div>
+                        <p class="stat-subtext">Habitantes censados en 2026</p>
+                    </div>
 
-    </div>
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">ALTITUD MEDIA</span>
+                            <i class="bi bi-triangle stat-icon"></i>
+                        </div>
+                        <div class="stat-value">604 m</div>
+                        <p class="stat-subtext">Sobre el nivel del mar</p>
+                    </div>
 
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">PULMÓN VERDE</span>
+                            <i class="bi bi-tree stat-icon"></i>
+                        </div>
+                        <div class="stat-value">Juan Carlos I</div>
+                        <p class="stat-subtext">Extenso parque municipal y lago</p>
+                    </div>
 
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">CONECTIVIDAD</span>
+                            <i class="bi bi-train-front stat-icon"></i>
+                        </div>
+                        <div class="stat-value">Cercanías C-3</div>
+                        <p class="stat-subtext">25 min a Madrid - Sol / Atocha</p>
+                    </div>
+                </div>
 
-    <section class="marquee-wrapper mb-4">
-        <div class="marquee-track">
-            <!-- Bloque 1 -->
-            <div class="marquee-group">
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">POBLACIÓN ACTIVA</span>
-                        <i class="bi bi-people stat-icon"></i>
+                <!-- Bloque 2 (Duplicado para el bucle infinito sin cortes) -->
+                <div class="marquee-group" aria-hidden="true">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">POBLACIÓN ACTIVA</span>
+                            <i class="bi bi-people stat-icon"></i>
+                        </div>
+                        <div class="stat-value">56.651</div>
+                        <p class="stat-subtext">Habitantes censados en 2026</p>
                     </div>
-                    <div class="stat-value">56.651</div>
-                    <p class="stat-subtext">Habitantes censados en 2026</p>
-                </div>
-    
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">ALTITUD MEDIA</span>
-                        <i class="bi bi-triangle stat-icon"></i>
+
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">ALTITUD MEDIA</span>
+                            <i class="bi bi-triangle stat-icon"></i>
+                        </div>
+                        <div class="stat-value">604 m</div>
+                        <p class="stat-subtext">Sobre el nivel del mar</p>
                     </div>
-                    <div class="stat-value">604 m</div>
-                    <p class="stat-subtext">Sobre el nivel del mar</p>
-                </div>
-    
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">PULMÓN VERDE</span>
-                        <i class="bi bi-tree stat-icon"></i>
+
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">PULMÓN VERDE</span>
+                            <i class="bi bi-tree stat-icon"></i>
+                        </div>
+                        <div class="stat-value">Juan Carlos I</div>
+                        <p class="stat-subtext">Extenso parque municipal y lago</p>
                     </div>
-                    <div class="stat-value">Juan Carlos I</div>
-                    <p class="stat-subtext">Extenso parque municipal y lago</p>
-                </div>
-    
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">CONECTIVIDAD</span>
-                        <i class="bi bi-train-front stat-icon"></i>
+
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="stat-label">CONECTIVIDAD</span>
+                            <i class="bi bi-train-front stat-icon"></i>
+                        </div>
+                        <div class="stat-value">Cercanías C-3</div>
+                        <p class="stat-subtext">25 min a Madrid - Sol / Atocha</p>
                     </div>
-                    <div class="stat-value">Cercanías C-3</div>
-                    <p class="stat-subtext">25 min a Madrid - Sol / Atocha</p>
-                </div>
-            </div>
-    
-            <!-- Bloque 2 (Duplicado para el bucle infinito sin cortes) -->
-            <div class="marquee-group" aria-hidden="true">
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">POBLACIÓN ACTIVA</span>
-                        <i class="bi bi-people stat-icon"></i>
-                    </div>
-                    <div class="stat-value">56.651</div>
-                    <p class="stat-subtext">Habitantes censados en 2026</p>
-                </div>
-    
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">ALTITUD MEDIA</span>
-                        <i class="bi bi-triangle stat-icon"></i>
-                    </div>
-                    <div class="stat-value">604 m</div>
-                    <p class="stat-subtext">Sobre el nivel del mar</p>
-                </div>
-    
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">PULMÓN VERDE</span>
-                        <i class="bi bi-tree stat-icon"></i>
-                    </div>
-                    <div class="stat-value">Juan Carlos I</div>
-                    <p class="stat-subtext">Extenso parque municipal y lago</p>
-                </div>
-    
-                <div class="stat-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="stat-label">CONECTIVIDAD</span>
-                        <i class="bi bi-train-front stat-icon"></i>
-                    </div>
-                    <div class="stat-value">Cercanías C-3</div>
-                    <p class="stat-subtext">25 min a Madrid - Sol / Atocha</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- =====================================================
+        <!-- =====================================================
          REPORTAJE: un capítulo por cada tarjeta de arriba
          Bootstrap 6 + tus clases .card y .btn. CSS en línea solo donde Bootstrap no tiene clase.
          ===================================================== -->
-    <section id="reportaje" class="container py-5" style="color: var(--text-color)">
+        <section id="reportaje" class="container py-5" style="color: var(--text-color)">
 
-        <div class="text-center mb-4">
-            <p class="text-uppercase fw-semibold small mb-2" style="color: #F08E21; letter-spacing: 0.12em">Reportaje</p>
-            <h2 class="fw-bold mb-2">Pinto, de cerca</h2>
-            <p class="opacity-75 mb-0">Cuatro capítulos para conocer su patrimonio, su historia, sus fiestas y sus zonas verdes. Elige uno.</p>
-        </div>
+            <div class="text-center mb-4">
+                <p class="text-uppercase fw-semibold small mb-2" style="color: #F08E21; letter-spacing: 0.12em">
+                    Reportaje</p>
+                <h2 class="fw-bold mb-2">Pinto, de cerca</h2>
+                <p class="opacity-75 mb-0">Cuatro capítulos para conocer su patrimonio, su historia, sus fiestas y sus
+                    zonas verdes. Elige uno.</p>
+            </div>
 
-        <!-- Selector de capítulos -->
-        <div class="row g-3 mb-5" role="tablist" aria-label="Capítulos del reportaje">
-            <div class="col-6 md:col-3">
-                <button type="button" id="tab-patrimonio" class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3" style="border-color: #F08E21 !important" data-ir-cap="patrimonio" role="tab" aria-selected="true" aria-controls="rep-patrimonio">
-                    <img src="imagenes/torre.jpeg" alt="" class="w-100 object-fit-cover" style="height: 120px">
-                    <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                        <span class="d-block" style="color: #F08E21">01</span><i class="bi bi-bricks me-1" aria-hidden="true"></i>Patrimonio
-                    </span>
-                </button>
+            <!-- Selector de capítulos -->
+            <div class="row g-3 mb-5" role="tablist" aria-label="Capítulos del reportaje">
+                <div class="col-6 md:col-3">
+                    <button type="button" id="tab-patrimonio"
+                        class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3"
+                        style="border-color: #F08E21 !important" data-ir-cap="patrimonio" role="tab"
+                        aria-selected="true" aria-controls="rep-patrimonio">
+                        <img src="imagenes/torre.jpeg" alt="" class="w-100 object-fit-cover" style="height: 120px">
+                        <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small"
+                            style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                            <span class="d-block" style="color: #F08E21">01</span><i class="bi bi-bricks me-1"
+                                aria-hidden="true"></i>Patrimonio
+                        </span>
+                    </button>
+                </div>
+                <div class="col-6 md:col-3">
+                    <button type="button" id="tab-historia"
+                        class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3 opacity-50"
+                        style="border-color: transparent !important" data-ir-cap="historia" role="tab"
+                        aria-selected="false" aria-controls="rep-historia">
+                        <img src="imagenes/punctum.jpg" alt="" class="w-100 object-fit-cover" style="height: 120px">
+                        <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small"
+                            style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                            <span class="d-block" style="color: #F08E21">02</span><i class="bi bi-compass-fill me-1"
+                                aria-hidden="true"></i>Historia y origen
+                        </span>
+                    </button>
+                </div>
+                <div class="col-6 md:col-3">
+                    <button type="button" id="tab-fiestas"
+                        class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3 opacity-50"
+                        style="border-color: transparent !important" data-ir-cap="fiestas" role="tab"
+                        aria-selected="false" aria-controls="rep-fiestas">
+                        <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="" class="w-100 object-fit-cover"
+                            style="height: 120px">
+                        <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small"
+                            style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                            <span class="d-block" style="color: #F08E21">03</span><i class="bi bi-stars me-1"
+                                aria-hidden="true"></i>Fiestas
+                        </span>
+                    </button>
+                </div>
+                <div class="col-6 md:col-3">
+                    <button type="button" id="tab-ocio"
+                        class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3 opacity-50"
+                        style="border-color: transparent !important" data-ir-cap="ocio" role="tab" aria-selected="false"
+                        aria-controls="rep-ocio">
+                        <img src="imagenes/juan.jpeg" alt="" class="w-100 object-fit-cover" style="height: 120px">
+                        <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small"
+                            style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                            <span class="d-block" style="color: #F08E21">04</span><i class="bi bi-tree-fill me-1"
+                                aria-hidden="true"></i>Ocio y zonas verdes
+                        </span>
+                    </button>
+                </div>
             </div>
-            <div class="col-6 md:col-3">
-                <button type="button" id="tab-historia" class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3 opacity-50" style="border-color: transparent !important" data-ir-cap="historia" role="tab" aria-selected="false" aria-controls="rep-historia">
-                    <img src="imagenes/punctum.jpg" alt="" class="w-100 object-fit-cover" style="height: 120px">
-                    <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                        <span class="d-block" style="color: #F08E21">02</span><i class="bi bi-compass-fill me-1" aria-hidden="true"></i>Historia y origen
-                    </span>
-                </button>
-            </div>
-            <div class="col-6 md:col-3">
-                <button type="button" id="tab-fiestas" class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3 opacity-50" style="border-color: transparent !important" data-ir-cap="fiestas" role="tab" aria-selected="false" aria-controls="rep-fiestas">
-                    <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="" class="w-100 object-fit-cover" style="height: 120px">
-                    <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                        <span class="d-block" style="color: #F08E21">03</span><i class="bi bi-stars me-1" aria-hidden="true"></i>Fiestas
-                    </span>
-                </button>
-            </div>
-            <div class="col-6 md:col-3">
-                <button type="button" id="tab-ocio" class="w-100 p-0 rounded-9 overflow-hidden position-relative shadow-sm border border-3 opacity-50" style="border-color: transparent !important" data-ir-cap="ocio" role="tab" aria-selected="false" aria-controls="rep-ocio">
-                    <img src="imagenes/juan.jpeg" alt="" class="w-100 object-fit-cover" style="height: 120px">
-                    <span class="position-absolute bottom-0 start-0 end-0 p-2 text-start fg-white fw-bold small" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                        <span class="d-block" style="color: #F08E21">04</span><i class="bi bi-tree-fill me-1" aria-hidden="true"></i>Ocio y zonas verdes
-                    </span>
-                </button>
-            </div>
-        </div>
 
-        <!-- ================= CAPÍTULO 1 ================= -->
-        <article id="rep-patrimonio" data-cap="patrimonio" class="fade show" role="tabpanel" aria-labelledby="tab-patrimonio" tabindex="-1">
-            <div class="position-relative rounded-9 overflow-hidden shadow">
-                <img src="imagenes/torre.jpeg" alt="Torre de Éboli" class="w-100 object-fit-cover" style="height: 360px">
-                <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                    <span class="rounded-pill small fw-bold px-3 py-1" style="background-color: #F08E21; color: #121212">Capítulo 1 · Patrimonio</span>
-                    <h3 class="fs-3xl fw-bold mt-3 mb-2">Piedras que guardan secretos</h3>
-                    <p class="mb-0" style="max-width: 640px">Una torre medieval que fue prisión de la Corona, una iglesia renacentista y una chimenea que recuerda que Pinto olía a chocolate.</p>
-                </div>
-            </div>
-            <div class="row g-3 my-4 text-center">
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">30 m</p>
-                        <p class="small mb-0">de altura tiene la Torre de Éboli</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">S. XIV</p>
-                        <p class="small mb-0">origen de la torre y de la iglesia</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1579</p>
-                        <p class="small mb-0">llega presa la princesa de Éboli</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1866</p>
-                        <p class="small mb-0">abre la fábrica de chocolate</p>
-                    </div></div>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-12 lg:col-7">
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-bricks me-2" style="color: #F08E21" aria-hidden="true"></i>La Torre de Éboli, una cárcel para nobles</h4>
-                    <p class="mb-0">Se cree que empezó a levantarse hacia 1359-1360, cuando el rey Pedro I cedió el señorío de Pinto a Íñigo López de Orozco; las primeras menciones escritas son de 1382. Mide 16,5 × 10 metros de planta y unos 30 de alto, y tiene las esquinas redondeadas. Por dentro conserva una bóveda de cañón de ladrillo de finales del siglo XV y una escalera de caracol metida en el muro sur. En los siglos XVI y XVII la Corona la usó como prisión de personajes notables. Hoy se puede conocer por dentro en visitas guiadas.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-bank me-2" style="color: #F08E21" aria-hidden="true"></i>Santo Domingo de Silos, el templo del pueblo</h4>
-                    <p class="mb-0">La parroquia tiene su origen en el siglo XIV, pero el edificio actual es de los siglos XV y XVI y mezcla gótico y renacimiento. Tiene tres naves y retablos barrocos; el retablo mayor, hecho entre 1637 y 1657, reúne pinturas y esculturas de la escuela madrileña ligada a la Corte.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-cup-hot-fill me-2" style="color: #F08E21" aria-hidden="true"></i>Cuando Pinto olía a chocolate</h4>
-                    <p class="mb-0">En 1866 se construyó aquí la fábrica de la Compañía Colonial. De ella solo quedan tres elementos: la chimenea, la «casita de chocolate» y uno de sus almacenes.</p>
-                    <h4 class="h6 fw-bold mt-4 mb-2 text-uppercase"><i class="bi bi-signpost-2-fill me-2" style="color: #F08E21" aria-hidden="true"></i>Más patrimonio</h4>
-                    <div class="d-flex flex-wrap gap-2"><span class="rounded-pill border small px-3 py-1">Convento de las Capuchinas (s. XVII)</span><span class="rounded-pill border small px-3 py-1">Iglesia de San José (neomudéjar)</span><span class="rounded-pill border small px-3 py-1">Museo Casa de la Cadena</span><span class="rounded-pill border small px-3 py-1">Plaza de la Constitución</span></div>
-                </div>
-                <div class="col-12 lg:col-5">
-                    <div class="lg:sticky-top">
-                    <p class="text-uppercase fw-semibold small mb-3" style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>¿Sabías que…?</p>
-                    <div class="d-flex flex-column gap-3">
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Quién estuvo preso en la torre?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>La princesa de Éboli, encerrada desde el 28 de julio de 1579; el secretario real Antonio Pérez y su esposa, Juana de Coello; y, por poco tiempo en 1808, Manuel Godoy.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Cómo se sube a lo alto de la torre?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>Por una escalera de caracol que va metida dentro del propio muro sur. El interior conserva además una bóveda de cañón de ladrillo de finales del siglo XV.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Qué pasó con la familia de Antonio Pérez?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>Cuando el secretario huyó a Aragón en 1590, Felipe II mandó encerrar en la torre a su mujer, Juana de Coello, y a sus hijos.</p>
-                        </div></div>
-                    </div>
+            <!-- ================= CAPÍTULO 1 ================= -->
+            <article id="rep-patrimonio" data-cap="patrimonio" class="fade show" role="tabpanel"
+                aria-labelledby="tab-patrimonio" tabindex="-1">
+                <div class="position-relative rounded-9 overflow-hidden shadow">
+                    <img src="imagenes/torre.jpeg" alt="Torre de Éboli" class="w-100 object-fit-cover"
+                        style="height: 360px">
+                    <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white"
+                        style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                        <span class="rounded-pill small fw-bold px-3 py-1"
+                            style="background-color: #F08E21; color: #121212">Capítulo 1 · Patrimonio</span>
+                        <h3 class="fs-3xl fw-bold mt-3 mb-2">Piedras que guardan secretos</h3>
+                        <p class="mb-0" style="max-width: 640px">Una torre medieval que fue prisión de la Corona, una
+                            iglesia renacentista y una chimenea que recuerda que Pinto olía a chocolate.</p>
                     </div>
                 </div>
-            </div>
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
-                <div></div>
-                <div class="flex-grow-1" style="max-width: 280px">
-                    <p class="small text-center mb-1">Capítulo 1 de 4</p>
-                    <div class="rounded-pill border overflow-hidden" style="height: 8px"><div class="h-100" style="width: 25%; background-color: #F08E21"></div></div>
+                <div class="row g-3 my-4 text-center">
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">30 m</p>
+                                <p class="small mb-0">de altura tiene la Torre de Éboli</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">S. XIV</p>
+                                <p class="small mb-0">origen de la torre y de la iglesia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1579</p>
+                                <p class="small mb-0">llega presa la princesa de Éboli</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1866</p>
+                                <p class="small mb-0">abre la fábrica de chocolate</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div><button type="button" class="btn rounded-pill" data-paso="1">Siguiente capítulo<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button></div>
-            </div>
-        </article>
+                <div class="row g-5">
+                    <div class="col-12 lg:col-7">
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-bricks me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>La Torre de Éboli, una cárcel para nobles</h4>
+                        <p class="mb-0">Se cree que empezó a levantarse hacia 1359-1360, cuando el rey Pedro I cedió el
+                            señorío de Pinto a Íñigo López de Orozco; las primeras menciones escritas son de 1382. Mide
+                            16,5 × 10 metros de planta y unos 30 de alto, y tiene las esquinas redondeadas. Por dentro
+                            conserva una bóveda de cañón de ladrillo de finales del siglo XV y una escalera de caracol
+                            metida en el muro sur. En los siglos XVI y XVII la Corona la usó como prisión de personajes
+                            notables. Hoy se puede conocer por dentro en visitas guiadas.</p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-bank me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Santo Domingo de Silos, el templo del pueblo</h4>
+                        <p class="mb-0">La parroquia tiene su origen en el siglo XIV, pero el edificio actual es de los
+                            siglos XV y XVI y mezcla gótico y renacimiento. Tiene tres naves y retablos barrocos; el
+                            retablo mayor, hecho entre 1637 y 1657, reúne pinturas y esculturas de la escuela madrileña
+                            ligada a la Corte.</p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-cup-hot-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Cuando Pinto olía a chocolate</h4>
+                        <p class="mb-0">En 1866 se construyó aquí la fábrica de la Compañía Colonial. De ella solo
+                            quedan tres elementos: la chimenea, la «casita de chocolate» y uno de sus almacenes.</p>
+                        <h4 class="h6 fw-bold mt-4 mb-2 text-uppercase"><i class="bi bi-signpost-2-fill me-2"
+                                style="color: #F08E21" aria-hidden="true"></i>Más patrimonio</h4>
+                        <div class="d-flex flex-wrap gap-2"><span class="rounded-pill border small px-3 py-1">Convento
+                                de las Capuchinas (s. XVII)</span><span
+                                class="rounded-pill border small px-3 py-1">Iglesia de San José (neomudéjar)</span><span
+                                class="rounded-pill border small px-3 py-1">Museo Casa de la Cadena</span><span
+                                class="rounded-pill border small px-3 py-1">Plaza de la Constitución</span></div>
+                    </div>
+                    <div class="col-12 lg:col-5">
+                        <div class="lg:sticky-top">
+                            <p class="text-uppercase fw-semibold small mb-3"
+                                style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>¿Sabías que…?</p>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Quién estuvo preso en la torre?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>La princesa de Éboli,
+                                            encerrada desde el 28 de julio de 1579; el secretario real Antonio Pérez y
+                                            su esposa, Juana de Coello; y, por poco tiempo en 1808, Manuel Godoy.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Cómo se sube a lo alto de la torre?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>Por una escalera de caracol
+                                            que va metida dentro del propio muro sur. El interior conserva además una
+                                            bóveda de cañón de ladrillo de finales del siglo XV.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Qué pasó con la familia de Antonio Pérez?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>Cuando el secretario huyó a
+                                            Aragón en 1590, Felipe II mandó encerrar en la torre a su mujer, Juana de
+                                            Coello, y a sus hijos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
+                    <div></div>
+                    <div class="flex-grow-1" style="max-width: 280px">
+                        <p class="small text-center mb-1">Capítulo 1 de 4</p>
+                        <div class="rounded-pill border overflow-hidden" style="height: 8px">
+                            <div class="h-100" style="width: 25%; background-color: #F08E21"></div>
+                        </div>
+                    </div>
+                    <div><button type="button" class="btn rounded-pill" data-paso="1">Siguiente capítulo<i
+                                class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button></div>
+                </div>
+            </article>
 
-        <!-- ================= CAPÍTULO 2 ================= -->
-        <article id="rep-historia" data-cap="historia" class="fade d-none" role="tabpanel" aria-labelledby="tab-historia" tabindex="-1">
-            <div class="position-relative rounded-9 overflow-hidden shadow">
-                <img src="imagenes/punctum.jpg" alt="Historia de Pinto" class="w-100 object-fit-cover" style="height: 360px">
-                <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                    <span class="rounded-pill small fw-bold px-3 py-1" style="background-color: #F08E21; color: #121212">Capítulo 2 · Historia y origen</span>
-                    <h3 class="fs-3xl fw-bold mt-3 mb-2">El punto en el centro del mapa</h3>
-                    <p class="mb-0" style="max-width: 640px">Una leyenda dice que aquí está el centro de la península; otra teoría, que el nombre viene de un cruce de calzadas romanas. Las dos dejaron huella en el escudo.</p>
-                </div>
-            </div>
-            <div class="row g-3 my-4 text-center">
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">5</p>
-                        <p class="small mb-0">calzadas romanas se cruzaban aquí</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1359</p>
-                        <p class="small mb-0">Pinto recibe el título de villa</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1935</p>
-                        <p class="small mb-0">desaparece la calle del Arca</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">≈100 %</p>
-                        <p class="small mb-0">crece la población desde el año 2000</p>
-                    </div></div>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-12 lg:col-7">
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-compass-fill me-2" style="color: #F08E21" aria-hidden="true"></i>La leyenda del Arca</h4>
-                    <p class="mb-0">Según una leyenda musulmana, unas mediciones situaron el centro de la península en el barranco del Egido de Pinto. Allí, bajo una piedra circular marcada con una X, se enterró un arca con los instrumentos usados para medir. Hoy un monumento en el Parque del Egido recuerda la historia.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-signpost-split-fill me-2" style="color: #F08E21" aria-hidden="true"></i>O un cruce de caminos</h4>
-                    <p class="mb-0">Otra hipótesis apunta a un origen romano: el nombre vendría del latín <em>Punctum</em>, «punto de paso», porque aquí confluían cinco calzadas. Con el tiempo, «Punto» habría acabado en «Pinto».</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-shield-fill me-2" style="color: #F08E21" aria-hidden="true"></i>Un escudo que lo cuenta todo</h4>
-                    <p class="mb-0">El escudo es un ajedrezado de oro y rojo con un globo terráqueo azul, los continentes en oro y un punto rojo en el centro de la península ibérica.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-3"><i class="bi bi-clock-history me-2" style="color: #F08E21" aria-hidden="true"></i>Línea del tiempo</h4>
-                    <ol class="list-unstyled border-start border-3 ps-4 mb-0" style="border-color: #F08E21 !important">
-                        <li class="position-relative pb-3">
-                            <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
-                            <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">Paleolítico</p>
-                            <p class="mb-0">Primeros pobladores: cazadores-recolectores en Las Fronteras y el Arroyo Culebro.</p>
-                        </li>
-                        <li class="position-relative pb-3">
-                            <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
-                            <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">Época romana</p>
-                            <p class="mb-0">Grandes fincas agrícolas, las villas romanas, con restos en Tinto Juan de la Cruz.</p>
-                        </li>
-                        <li class="position-relative pb-3">
-                            <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
-                            <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">711 – 1083</p>
-                            <p class="mb-0">Con el nombre de <em>Xata</em>, Pinto es una colonia de Getafe hasta que Alfonso VI la conquista.</p>
-                        </li>
-                        <li class="position-relative pb-3">
-                            <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
-                            <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">1359</p>
-                            <p class="mb-0">Pedro I el Cruel le concede el título de villa; empieza la época de los señoríos.</p>
-                        </li>
-                        <li class="position-relative pb-3">
-                            <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
-                            <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">1579</p>
-                            <p class="mb-0">La princesa de Éboli llega presa a la torre.</p>
-                        </li>
-                        <li class="position-relative pb-3">
-                            <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
-                            <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">1866</p>
-                            <p class="mb-0">Abre la fábrica de chocolate de la Compañía Colonial.</p>
-                        </li>
-                        <li class="position-relative pb-3">
-                            <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
-                            <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">Hoy</p>
-                            <p class="mb-0">Más de 55.000 habitantes: casi el doble que en el año 2000.</p>
-                        </li>
-                    </ol>
-                </div>
-                <div class="col-12 lg:col-5">
-                    <div class="lg:sticky-top">
-                    <p class="text-uppercase fw-semibold small mb-3" style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>¿Sabías que…?</p>
-                    <div class="d-flex flex-column gap-3">
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Es Pinto el centro exacto de la península?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>Es una tradición muy antigua y por eso hay un monumento en el Parque del Egido, pero como dato geográfico se considera discutible.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Dónde estaba la piedra del arca?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>En el cruce de la calle del Hospital con la de Maestra María del Rosario, que hasta 1935 se llamaba precisamente calle del Arca.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿De dónde viene «estar entre Pinto y Valdemoro»?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>Hoy significa estar indeciso (o algo bebido). Su origen no está claro: los cronistas lo relacionan con los antiguos límites entre los dos pueblos y lo sitúan en la época de Fernando III.</p>
-                        </div></div>
-                    </div>
+            <!-- ================= CAPÍTULO 2 ================= -->
+            <article id="rep-historia" data-cap="historia" class="fade d-none" role="tabpanel"
+                aria-labelledby="tab-historia" tabindex="-1">
+                <div class="position-relative rounded-9 overflow-hidden shadow">
+                    <img src="imagenes/punctum.jpg" alt="Historia de Pinto" class="w-100 object-fit-cover"
+                        style="height: 360px">
+                    <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white"
+                        style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                        <span class="rounded-pill small fw-bold px-3 py-1"
+                            style="background-color: #F08E21; color: #121212">Capítulo 2 · Historia y origen</span>
+                        <h3 class="fs-3xl fw-bold mt-3 mb-2">El punto en el centro del mapa</h3>
+                        <p class="mb-0" style="max-width: 640px">Una leyenda dice que aquí está el centro de la
+                            península; otra teoría, que el nombre viene de un cruce de calzadas romanas. Las dos dejaron
+                            huella en el escudo.</p>
                     </div>
                 </div>
-            </div>
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
-                <div><button type="button" class="btn rounded-pill" data-paso="-1"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Anterior</button></div>
-                <div class="flex-grow-1" style="max-width: 280px">
-                    <p class="small text-center mb-1">Capítulo 2 de 4</p>
-                    <div class="rounded-pill border overflow-hidden" style="height: 8px"><div class="h-100" style="width: 50%; background-color: #F08E21"></div></div>
+                <div class="row g-3 my-4 text-center">
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">5</p>
+                                <p class="small mb-0">calzadas romanas se cruzaban aquí</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1359</p>
+                                <p class="small mb-0">Pinto recibe el título de villa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1935</p>
+                                <p class="small mb-0">desaparece la calle del Arca</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">≈100 %</p>
+                                <p class="small mb-0">crece la población desde el año 2000</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div><button type="button" class="btn rounded-pill" data-paso="1">Siguiente capítulo<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button></div>
-            </div>
-        </article>
+                <div class="row g-5">
+                    <div class="col-12 lg:col-7">
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-compass-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>La leyenda del Arca</h4>
+                        <p class="mb-0">Según una leyenda musulmana, unas mediciones situaron el centro de la península
+                            en el barranco del Egido de Pinto. Allí, bajo una piedra circular marcada con una X, se
+                            enterró un arca con los instrumentos usados para medir. Hoy un monumento en el Parque del
+                            Egido recuerda la historia.</p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-signpost-split-fill me-2"
+                                style="color: #F08E21" aria-hidden="true"></i>O un cruce de caminos</h4>
+                        <p class="mb-0">Otra hipótesis apunta a un origen romano: el nombre vendría del latín
+                            <em>Punctum</em>, «punto de paso», porque aquí confluían cinco calzadas. Con el tiempo,
+                            «Punto» habría acabado en «Pinto».</p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-shield-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Un escudo que lo cuenta todo</h4>
+                        <p class="mb-0">El escudo es un ajedrezado de oro y rojo con un globo terráqueo azul, los
+                            continentes en oro y un punto rojo en el centro de la península ibérica.</p>
+                        <h4 class="h5 fw-bold mt-4 mb-3"><i class="bi bi-clock-history me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Línea del tiempo</h4>
+                        <ol class="list-unstyled border-start border-3 ps-4 mb-0"
+                            style="border-color: #F08E21 !important">
+                            <li class="position-relative pb-3">
+                                <span class="position-absolute rounded-circle"
+                                    style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
+                                <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">Paleolítico</p>
+                                <p class="mb-0">Primeros pobladores: cazadores-recolectores en Las Fronteras y el Arroyo
+                                    Culebro.</p>
+                            </li>
+                            <li class="position-relative pb-3">
+                                <span class="position-absolute rounded-circle"
+                                    style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
+                                <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">Época romana</p>
+                                <p class="mb-0">Grandes fincas agrícolas, las villas romanas, con restos en Tinto Juan
+                                    de la Cruz.</p>
+                            </li>
+                            <li class="position-relative pb-3">
+                                <span class="position-absolute rounded-circle"
+                                    style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
+                                <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">711 – 1083</p>
+                                <p class="mb-0">Con el nombre de <em>Xata</em>, Pinto es una colonia de Getafe hasta que
+                                    Alfonso VI la conquista.</p>
+                            </li>
+                            <li class="position-relative pb-3">
+                                <span class="position-absolute rounded-circle"
+                                    style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
+                                <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">1359</p>
+                                <p class="mb-0">Pedro I el Cruel le concede el título de villa; empieza la época de los
+                                    señoríos.</p>
+                            </li>
+                            <li class="position-relative pb-3">
+                                <span class="position-absolute rounded-circle"
+                                    style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
+                                <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">1579</p>
+                                <p class="mb-0">La princesa de Éboli llega presa a la torre.</p>
+                            </li>
+                            <li class="position-relative pb-3">
+                                <span class="position-absolute rounded-circle"
+                                    style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
+                                <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">1866</p>
+                                <p class="mb-0">Abre la fábrica de chocolate de la Compañía Colonial.</p>
+                            </li>
+                            <li class="position-relative pb-3">
+                                <span class="position-absolute rounded-circle"
+                                    style="width: 14px; height: 14px; left: -33px; top: 5px; background-color: #F08E21"></span>
+                                <p class="fw-bold small text-uppercase mb-0" style="color: #F08E21">Hoy</p>
+                                <p class="mb-0">Más de 55.000 habitantes: casi el doble que en el año 2000.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-12 lg:col-5">
+                        <div class="lg:sticky-top">
+                            <p class="text-uppercase fw-semibold small mb-3"
+                                style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>¿Sabías que…?</p>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Es Pinto el centro exacto de la península?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>Es una tradición muy antigua y
+                                            por eso hay un monumento en el Parque del Egido, pero como dato geográfico
+                                            se considera discutible.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Dónde estaba la piedra del arca?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>En el cruce de la calle del
+                                            Hospital con la de Maestra María del Rosario, que hasta 1935 se llamaba
+                                            precisamente calle del Arca.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿De dónde viene «estar entre Pinto y Valdemoro»?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>Hoy significa estar indeciso
+                                            (o algo bebido). Su origen no está claro: los cronistas lo relacionan con
+                                            los antiguos límites entre los dos pueblos y lo sitúan en la época de
+                                            Fernando III.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
+                    <div><button type="button" class="btn rounded-pill" data-paso="-1"><i class="bi bi-arrow-left me-1"
+                                aria-hidden="true"></i>Anterior</button></div>
+                    <div class="flex-grow-1" style="max-width: 280px">
+                        <p class="small text-center mb-1">Capítulo 2 de 4</p>
+                        <div class="rounded-pill border overflow-hidden" style="height: 8px">
+                            <div class="h-100" style="width: 50%; background-color: #F08E21"></div>
+                        </div>
+                    </div>
+                    <div><button type="button" class="btn rounded-pill" data-paso="1">Siguiente capítulo<i
+                                class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button></div>
+                </div>
+            </article>
 
-        <!-- ================= CAPÍTULO 3 ================= -->
-        <article id="rep-fiestas" data-cap="fiestas" class="fade d-none" role="tabpanel" aria-labelledby="tab-fiestas" tabindex="-1">
-            <div class="position-relative rounded-9 overflow-hidden shadow">
-                <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="Plaza de la Constitución de Pinto" class="w-100 object-fit-cover" style="height: 360px">
-                <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                    <span class="rounded-pill small fw-bold px-3 py-1" style="background-color: #F08E21; color: #121212">Capítulo 3 · Fiestas</span>
-                    <h3 class="fs-3xl fw-bold mt-3 mb-2">Un pueblo que sale a la calle</h3>
-                    <p class="mb-0" style="max-width: 640px">Dos grandes celebraciones, la del Cristo y la de agosto, y fiestas de barrio que llenan Pinto de música, peñas y tradición.</p>
+            <!-- ================= CAPÍTULO 3 ================= -->
+            <article id="rep-fiestas" data-cap="fiestas" class="fade d-none" role="tabpanel"
+                aria-labelledby="tab-fiestas" tabindex="-1">
+                <div class="position-relative rounded-9 overflow-hidden shadow">
+                    <img src="imagenes/Plaza-de-la-Constitucion.jpg" alt="Plaza de la Constitución de Pinto"
+                        class="w-100 object-fit-cover" style="height: 360px">
+                    <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white"
+                        style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                        <span class="rounded-pill small fw-bold px-3 py-1"
+                            style="background-color: #F08E21; color: #121212">Capítulo 3 · Fiestas</span>
+                        <h3 class="fs-3xl fw-bold mt-3 mb-2">Un pueblo que sale a la calle</h3>
+                        <p class="mb-0" style="max-width: 640px">Dos grandes celebraciones, la del Cristo y la de
+                            agosto, y fiestas de barrio que llenan Pinto de música, peñas y tradición.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="row g-3 my-4 text-center">
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">2</p>
-                        <p class="small mb-0">grandes fiestas al año</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1714</p>
-                        <p class="small mb-0">nace la hermandad más antigua</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">15 ago</p>
-                        <p class="small mb-0">el día grande de las patronales</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">Gratis</p>
-                        <p class="small mb-0">los conciertos de agosto</p>
-                    </div></div>
-                </div>
-            </div>
-            <h4 class="h5 fw-bold mb-3"><i class="bi bi-calendar-heart-fill me-2" style="color: #F08E21" aria-hidden="true"></i>El calendario festivo</h4>
-            <div class="row g-3 mb-5">
-                <div class="col-12 sm:col-6 lg:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
-                        <div class="text-center py-2 fw-bold text-uppercase small" style="background-color: #F08E21; color: #121212">Abr – May</div>
-                        <div class="card-body p-3">
-                            <p class="fs-xl fw-bold mb-0">≈2 may</p>
-                            <p class="fw-bold mb-1" style="color: #F08E21">Fiestas del Prado</p>
-                            <p class="small mb-0">El barrio de El Prado lo celebra en torno al Día de la Comunidad de Madrid: conciertos, MosterChef y paella popular.</p>
+                <div class="row g-3 my-4 text-center">
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">2</p>
+                                <p class="small mb-0">grandes fiestas al año</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1714</p>
+                                <p class="small mb-0">nace la hermandad más antigua</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">15 ago</p>
+                                <p class="small mb-0">el día grande de las patronales</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">Gratis</p>
+                                <p class="small mb-0">los conciertos de agosto</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 sm:col-6 lg:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
-                        <div class="text-center py-2 fw-bold text-uppercase small" style="background-color: #F08E21; color: #121212">Mayo</div>
-                        <div class="card-body p-3">
-                            <p class="fs-xl fw-bold mb-0">San Isidro</p>
-                            <p class="fw-bold mb-1" style="color: #F08E21">Verbena de San Isidro</p>
-                            <p class="small mb-0">Verbena popular en el Parque Nicolás Fúster.</p>
+                <h4 class="h5 fw-bold mb-3"><i class="bi bi-calendar-heart-fill me-2" style="color: #F08E21"
+                        aria-hidden="true"></i>El calendario festivo</h4>
+                <div class="row g-3 mb-5">
+                    <div class="col-12 sm:col-6 lg:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
+                            <div class="text-center py-2 fw-bold text-uppercase small"
+                                style="background-color: #F08E21; color: #121212">Abr – May</div>
+                            <div class="card-body p-3">
+                                <p class="fs-xl fw-bold mb-0">≈2 may</p>
+                                <p class="fw-bold mb-1" style="color: #F08E21">Fiestas del Prado</p>
+                                <p class="small mb-0">El barrio de El Prado lo celebra en torno al Día de la Comunidad
+                                    de Madrid: conciertos, MosterChef y paella popular.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 sm:col-6 lg:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
+                            <div class="text-center py-2 fw-bold text-uppercase small"
+                                style="background-color: #F08E21; color: #121212">Mayo</div>
+                            <div class="card-body p-3">
+                                <p class="fs-xl fw-bold mb-0">San Isidro</p>
+                                <p class="fw-bold mb-1" style="color: #F08E21">Verbena de San Isidro</p>
+                                <p class="small mb-0">Verbena popular en el Parque Nicolás Fúster.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 sm:col-6 lg:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
+                            <div class="text-center py-2 fw-bold text-uppercase small"
+                                style="background-color: #F08E21; color: #121212">May – Jun</div>
+                            <div class="card-body p-3">
+                                <p class="fs-xl fw-bold mb-0">Pentecostés</p>
+                                <p class="fw-bold mb-1" style="color: #F08E21">Santísimo Cristo del Calvario</p>
+                                <p class="small mb-0">Diez días de fiesta organizados con la hermandad más antigua de
+                                    Pinto: traslado del Cristo desde su ermita y procesiones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 sm:col-6 lg:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
+                            <div class="text-center py-2 fw-bold text-uppercase small"
+                                style="background-color: #F08E21; color: #121212">Agosto</div>
+                            <div class="card-body p-3">
+                                <p class="fs-xl fw-bold mb-0">≈15 ago</p>
+                                <p class="fw-bold mb-1" style="color: #F08E21">Patronales de la Asunción</p>
+                                <p class="small mb-0">Las grandes fiestas del verano: encierros, bueyada tradicional,
+                                    fiesta Holi, peñas y conciertos.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 sm:col-6 lg:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
-                        <div class="text-center py-2 fw-bold text-uppercase small" style="background-color: #F08E21; color: #121212">May – Jun</div>
-                        <div class="card-body p-3">
-                            <p class="fs-xl fw-bold mb-0">Pentecostés</p>
-                            <p class="fw-bold mb-1" style="color: #F08E21">Santísimo Cristo del Calvario</p>
-                            <p class="small mb-0">Diez días de fiesta organizados con la hermandad más antigua de Pinto: traslado del Cristo desde su ermita y procesiones.</p>
+                <div class="row g-5">
+                    <div class="col-12 lg:col-7">
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-stars me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Agosto: la Virgen de la Asunción</h4>
+                        <p class="mb-0">Hacia el 15 de agosto Pinto vive sus fiestas patronales en honor a su patrona.
+                            El día grande hay misa solemne y procesión por las calles, y el resto de la semana mezcla
+                            peñas, encierros y grandes conciertos gratuitos. En 2025 pasaron por el cartel Rozalén, Ana
+                            Guerra y David Bustamante, entre otros.</p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-heart-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Mayo o junio: el Cristo del Calvario</h4>
+                        <p class="mb-0">Es la otra gran celebración del municipio y cae en torno a Pentecostés. La
+                            organizan el Ayuntamiento y la hermandad del Santísimo Cristo del Calvario, la más antigua
+                            de Pinto, nacida en 1714. Su momento más emotivo es el traslado de la imagen desde la ermita
+                            hasta la parroquia de Santo Domingo de Silos.</p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-music-note-beamed me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Y las fiestas de barrio</h4>
+                        <p class="mb-0">Las Fiestas del Prado, a primeros de mayo, son de las citas más esperadas fuera
+                            del verano, y la verbena de San Isidro llena de vecinos el Parque Fúster.</p>
+                    </div>
+                    <div class="col-12 lg:col-5">
+                        <div class="lg:sticky-top">
+                            <p class="text-uppercase fw-semibold small mb-3"
+                                style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>¿Sabías que…?</p>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Dónde son los conciertos de agosto?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>En el Parque Juan Carlos I,
+                                            que se convierte en el escenario de una programación musical gratuita del
+                                            pop al rock.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Qué novedad trajeron las fiestas de 2026?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>El estreno del «toro a cajón»,
+                                            junto con un concurso de recortes y una bueyada infantil.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Cuál es la hermandad más antigua de Pinto?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>La del Santísimo Cristo del
+                                            Calvario, que existe desde 1714.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 sm:col-6 lg:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden">
-                        <div class="text-center py-2 fw-bold text-uppercase small" style="background-color: #F08E21; color: #121212">Agosto</div>
-                        <div class="card-body p-3">
-                            <p class="fs-xl fw-bold mb-0">≈15 ago</p>
-                            <p class="fw-bold mb-1" style="color: #F08E21">Patronales de la Asunción</p>
-                            <p class="small mb-0">Las grandes fiestas del verano: encierros, bueyada tradicional, fiesta Holi, peñas y conciertos.</p>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
+                    <div><button type="button" class="btn rounded-pill" data-paso="-1"><i class="bi bi-arrow-left me-1"
+                                aria-hidden="true"></i>Anterior</button></div>
+                    <div class="flex-grow-1" style="max-width: 280px">
+                        <p class="small text-center mb-1">Capítulo 3 de 4</p>
+                        <div class="rounded-pill border overflow-hidden" style="height: 8px">
+                            <div class="h-100" style="width: 75%; background-color: #F08E21"></div>
                         </div>
                     </div>
+                    <div><button type="button" class="btn rounded-pill" data-paso="1">Siguiente capítulo<i
+                                class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button></div>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-12 lg:col-7">
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-stars me-2" style="color: #F08E21" aria-hidden="true"></i>Agosto: la Virgen de la Asunción</h4>
-                    <p class="mb-0">Hacia el 15 de agosto Pinto vive sus fiestas patronales en honor a su patrona. El día grande hay misa solemne y procesión por las calles, y el resto de la semana mezcla peñas, encierros y grandes conciertos gratuitos. En 2025 pasaron por el cartel Rozalén, Ana Guerra y David Bustamante, entre otros.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-heart-fill me-2" style="color: #F08E21" aria-hidden="true"></i>Mayo o junio: el Cristo del Calvario</h4>
-                    <p class="mb-0">Es la otra gran celebración del municipio y cae en torno a Pentecostés. La organizan el Ayuntamiento y la hermandad del Santísimo Cristo del Calvario, la más antigua de Pinto, nacida en 1714. Su momento más emotivo es el traslado de la imagen desde la ermita hasta la parroquia de Santo Domingo de Silos.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-music-note-beamed me-2" style="color: #F08E21" aria-hidden="true"></i>Y las fiestas de barrio</h4>
-                    <p class="mb-0">Las Fiestas del Prado, a primeros de mayo, son de las citas más esperadas fuera del verano, y la verbena de San Isidro llena de vecinos el Parque Fúster.</p>
-                </div>
-                <div class="col-12 lg:col-5">
-                    <div class="lg:sticky-top">
-                    <p class="text-uppercase fw-semibold small mb-3" style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>¿Sabías que…?</p>
-                    <div class="d-flex flex-column gap-3">
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Dónde son los conciertos de agosto?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>En el Parque Juan Carlos I, que se convierte en el escenario de una programación musical gratuita del pop al rock.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Qué novedad trajeron las fiestas de 2026?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>El estreno del «toro a cajón», junto con un concurso de recortes y una bueyada infantil.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Cuál es la hermandad más antigua de Pinto?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>La del Santísimo Cristo del Calvario, que existe desde 1714.</p>
-                        </div></div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
-                <div><button type="button" class="btn rounded-pill" data-paso="-1"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Anterior</button></div>
-                <div class="flex-grow-1" style="max-width: 280px">
-                    <p class="small text-center mb-1">Capítulo 3 de 4</p>
-                    <div class="rounded-pill border overflow-hidden" style="height: 8px"><div class="h-100" style="width: 75%; background-color: #F08E21"></div></div>
-                </div>
-                <div><button type="button" class="btn rounded-pill" data-paso="1">Siguiente capítulo<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button></div>
-            </div>
-        </article>
+            </article>
 
-        <!-- ================= CAPÍTULO 4 ================= -->
-        <article id="rep-ocio" data-cap="ocio" class="fade d-none" role="tabpanel" aria-labelledby="tab-ocio" tabindex="-1">
-            <div class="position-relative rounded-9 overflow-hidden shadow">
-                <img src="imagenes/juan.jpeg" alt="Parque Juan Carlos I de Pinto" class="w-100 object-fit-cover" style="height: 360px">
-                <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
-                    <span class="rounded-pill small fw-bold px-3 py-1" style="background-color: #F08E21; color: #121212">Capítulo 4 · Ocio y zonas verdes</span>
-                    <h3 class="fs-3xl fw-bold mt-3 mb-2">Pinto al aire libre</h3>
-                    <p class="mb-0" style="max-width: 640px">Un gran parque con lago, un viaje a la prehistoria y un parque regional a las puertas de la ciudad para salir a andar o en bici.</p>
-                </div>
-            </div>
-            <div class="row g-3 my-4 text-center">
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">550.000 m²</p>
-                        <p class="small mb-0">tiene el Parque Juan Carlos I</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1997</p>
-                        <p class="small mb-0">año de inauguración del parque</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">2 ha</p>
-                        <p class="small mb-0">ocupa Arqueopinto</p>
-                    </div></div>
-                </div>
-                <div class="col-6 md:col-3">
-                    <div class="card h-100 rounded-9 shadow-sm"><div class="card-body p-3">
-                        <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1/3</p>
-                        <p class="small mb-0">del término es Parque del Sureste</p>
-                    </div></div>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-12 lg:col-7">
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-tree-fill me-2" style="color: #F08E21" aria-hidden="true"></i>Parque Juan Carlos I, el gran pulmón verde</h4>
-                    <p class="mb-0">Es la mayor zona verde de Pinto, con 550.000 m², y se inauguró en 1997. Tiene lago y ría, auditorio y un centro hípico, y en verano su lago es el escenario del ciclo cultural gratuito Pinto de Verano. En 2026 el Ayuntamiento terminó la recuperación del lago, con una inversión de 256.562,47 €, un sistema sostenible para mejorar el agua, iluminación y chorros ornamentales.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-fire me-2" style="color: #F08E21" aria-hidden="true"></i>Arqueopinto, un viaje a la prehistoria</h4>
-                    <p class="mb-0">Dentro del mismo parque está Arqueopinto, un parque de la prehistoria de unas dos hectáreas, de propiedad municipal, con reconstrucciones, réplicas y talleres para ver cómo vivían nuestros antepasados. Cada mayo organiza una feria prehistórica con artesanos.</p>
-                    <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-bicycle me-2" style="color: #F08E21" aria-hidden="true"></i>Naturaleza a un paso</h4>
-                    <p class="mb-0">Un tercio del término municipal forma parte del Parque Regional del Sureste: rutas a pie y en bici por cañadas reales, búnkeres de la Guerra Civil, observación de aves y paisajes de yeso.</p>
-                    <h4 class="h5 fw-bold mt-5 mb-3"><i class="bi bi-ui-checks-grid me-2" style="color: #F08E21" aria-hidden="true"></i>Elige tu plan</h4>
-                    <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Filtrar planes">
-                        <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold" style="border-color: #F08E21 !important; background-color: #F08E21; color: #121212" data-plan-filtro="todos" aria-pressed="true"><i class="bi bi-grid-fill me-1" aria-hidden="true"></i>Todos</button>
-                        <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent" style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="familia" aria-pressed="false"><i class="bi bi-people-fill me-1" aria-hidden="true"></i>En familia</button>
-                        <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent" style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="deporte" aria-pressed="false"><i class="bi bi-person-arms-up me-1" aria-hidden="true"></i>Deporte</button>
-                        <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent" style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="naturaleza" aria-pressed="false"><i class="bi bi-flower1 me-1" aria-hidden="true"></i>Naturaleza</button>
-                        <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent" style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="cultura" aria-pressed="false"><i class="bi bi-book-fill me-1" aria-hidden="true"></i>Cultura</button>
+            <!-- ================= CAPÍTULO 4 ================= -->
+            <article id="rep-ocio" data-cap="ocio" class="fade d-none" role="tabpanel" aria-labelledby="tab-ocio"
+                tabindex="-1">
+                <div class="position-relative rounded-9 overflow-hidden shadow">
+                    <img src="imagenes/juan.jpeg" alt="Parque Juan Carlos I de Pinto" class="w-100 object-fit-cover"
+                        style="height: 360px">
+                    <div class="position-absolute bottom-0 start-0 end-0 p-4 fg-white"
+                        style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.85))">
+                        <span class="rounded-pill small fw-bold px-3 py-1"
+                            style="background-color: #F08E21; color: #121212">Capítulo 4 · Ocio y zonas verdes</span>
+                        <h3 class="fs-3xl fw-bold mt-3 mb-2">Pinto al aire libre</h3>
+                        <p class="mb-0" style="max-width: 640px">Un gran parque con lago, un viaje a la prehistoria y un
+                            parque regional a las puertas de la ciudad para salir a andar o en bici.</p>
                     </div>
-                    <div class="row g-2">
-                        <div class="col-12 sm:col-6" data-plan="familia naturaleza">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-water fs-lg" style="color: #F08E21" aria-hidden="true"></i>Pasear junto al lago y la ría del Juan Carlos I</div>
+                </div>
+                <div class="row g-3 my-4 text-center">
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">550.000 m²</p>
+                                <p class="small mb-0">tiene el Parque Juan Carlos I</p>
+                            </div>
                         </div>
-                        <div class="col-12 sm:col-6" data-plan="familia cultura">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-fire fs-lg" style="color: #F08E21" aria-hidden="true"></i>Viajar a la prehistoria en Arqueopinto</div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1997</p>
+                                <p class="small mb-0">año de inauguración del parque</p>
+                            </div>
                         </div>
-                        <div class="col-12 sm:col-6" data-plan="deporte naturaleza">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-bicycle fs-lg" style="color: #F08E21" aria-hidden="true"></i>Rutas en bici por el Parque del Sureste</div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">2 ha</p>
+                                <p class="small mb-0">ocupa Arqueopinto</p>
+                            </div>
                         </div>
-                        <div class="col-12 sm:col-6" data-plan="cultura naturaleza">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-shield-shaded fs-lg" style="color: #F08E21" aria-hidden="true"></i>Buscar los búnkeres de la Guerra Civil</div>
-                        </div>
-                        <div class="col-12 sm:col-6" data-plan="naturaleza">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-binoculars-fill fs-lg" style="color: #F08E21" aria-hidden="true"></i>Observar aves y paisajes de yeso</div>
-                        </div>
-                        <div class="col-12 sm:col-6" data-plan="deporte">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-person-arms-up fs-lg" style="color: #F08E21" aria-hidden="true"></i>Entrenar en la calistenia del Parque Fúster</div>
-                        </div>
-                        <div class="col-12 sm:col-6" data-plan="deporte familia">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-heart-pulse-fill fs-lg" style="color: #F08E21" aria-hidden="true"></i>Montar a caballo en el Centro Hípico</div>
-                        </div>
-                        <div class="col-12 sm:col-6" data-plan="cultura">
-                            <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i class="bi bi-bricks fs-lg" style="color: #F08E21" aria-hidden="true"></i>Visita guiada a la Torre de Éboli</div>
+                    </div>
+                    <div class="col-6 md:col-3">
+                        <div class="card h-100 rounded-9 shadow-sm">
+                            <div class="card-body p-3">
+                                <p class="fs-2xl fw-bold mb-0 text-nowrap" style="color: #F08E21">1/3</p>
+                                <p class="small mb-0">del término es Parque del Sureste</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 lg:col-5">
-                    <div class="lg:sticky-top">
-                    <p class="text-uppercase fw-semibold small mb-3" style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>¿Sabías que…?</p>
-                    <div class="d-flex flex-column gap-3">
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Es el mismo Juan Carlos I que el de Madrid?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>No. El de Madrid está junto a IFEMA y tiene unas 160 hectáreas; el de Pinto es un parque municipal propio, con 55.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Hay búnkeres de la Guerra Civil en Pinto?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>Sí: en el entorno del Parque Regional del Sureste se pueden visitar búnkeres de la Guerra Civil.</p>
-                        </div></div>
-                        <div class="card rounded-9 shadow-sm"><div class="card-body p-3">
-                            <button type="button" class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold" style="color: inherit" data-revelar aria-expanded="false">
-                                <span>¿Qué tiene de especial el lago desde 2026?</span>
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
-                            </button>
-                            <p class="small mt-3 mb-0 pt-3 border-top" hidden>Un sistema sostenible que mejora la calidad del agua y favorece su equilibrio biológico, además de iluminación y chorros ornamentales.</p>
-                        </div></div>
+                <div class="row g-5">
+                    <div class="col-12 lg:col-7">
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-tree-fill me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Parque Juan Carlos I, el gran pulmón verde</h4>
+                        <p class="mb-0">Es la mayor zona verde de Pinto, con 550.000 m², y se inauguró en 1997. Tiene
+                            lago y ría, auditorio y un centro hípico, y en verano su lago es el escenario del ciclo
+                            cultural gratuito Pinto de Verano. En 2026 el Ayuntamiento terminó la recuperación del lago,
+                            con una inversión de 256.562,47 €, un sistema sostenible para mejorar el agua, iluminación y
+                            chorros ornamentales.</p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-fire me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Arqueopinto, un viaje a la prehistoria</h4>
+                        <p class="mb-0">Dentro del mismo parque está Arqueopinto, un parque de la prehistoria de unas
+                            dos hectáreas, de propiedad municipal, con reconstrucciones, réplicas y talleres para ver
+                            cómo vivían nuestros antepasados. Cada mayo organiza una feria prehistórica con artesanos.
+                        </p>
+                        <h4 class="h5 fw-bold mt-4 mb-2"><i class="bi bi-bicycle me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Naturaleza a un paso</h4>
+                        <p class="mb-0">Un tercio del término municipal forma parte del Parque Regional del Sureste:
+                            rutas a pie y en bici por cañadas reales, búnkeres de la Guerra Civil, observación de aves y
+                            paisajes de yeso.</p>
+                        <h4 class="h5 fw-bold mt-5 mb-3"><i class="bi bi-ui-checks-grid me-2" style="color: #F08E21"
+                                aria-hidden="true"></i>Elige tu plan</h4>
+                        <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Filtrar planes">
+                            <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold"
+                                style="border-color: #F08E21 !important; background-color: #F08E21; color: #121212"
+                                data-plan-filtro="todos" aria-pressed="true"><i class="bi bi-grid-fill me-1"
+                                    aria-hidden="true"></i>Todos</button>
+                            <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent"
+                                style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="familia"
+                                aria-pressed="false"><i class="bi bi-people-fill me-1" aria-hidden="true"></i>En
+                                familia</button>
+                            <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent"
+                                style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="deporte"
+                                aria-pressed="false"><i class="bi bi-person-arms-up me-1"
+                                    aria-hidden="true"></i>Deporte</button>
+                            <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent"
+                                style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="naturaleza"
+                                aria-pressed="false"><i class="bi bi-flower1 me-1"
+                                    aria-hidden="true"></i>Naturaleza</button>
+                            <button type="button" class="rounded-pill border px-3 py-1 small fw-semibold bg-transparent"
+                                style="border-color: #F08E21 !important; color: inherit" data-plan-filtro="cultura"
+                                aria-pressed="false"><i class="bi bi-book-fill me-1"
+                                    aria-hidden="true"></i>Cultura</button>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-12 sm:col-6" data-plan="familia naturaleza">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-water fs-lg" style="color: #F08E21" aria-hidden="true"></i>Pasear
+                                    junto al lago y la ría del Juan Carlos I</div>
+                            </div>
+                            <div class="col-12 sm:col-6" data-plan="familia cultura">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-fire fs-lg" style="color: #F08E21" aria-hidden="true"></i>Viajar a
+                                    la prehistoria en Arqueopinto</div>
+                            </div>
+                            <div class="col-12 sm:col-6" data-plan="deporte naturaleza">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-bicycle fs-lg" style="color: #F08E21" aria-hidden="true"></i>Rutas
+                                    en bici por el Parque del Sureste</div>
+                            </div>
+                            <div class="col-12 sm:col-6" data-plan="cultura naturaleza">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-shield-shaded fs-lg" style="color: #F08E21"
+                                        aria-hidden="true"></i>Buscar los búnkeres de la Guerra Civil</div>
+                            </div>
+                            <div class="col-12 sm:col-6" data-plan="naturaleza">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-binoculars-fill fs-lg" style="color: #F08E21"
+                                        aria-hidden="true"></i>Observar aves y paisajes de yeso</div>
+                            </div>
+                            <div class="col-12 sm:col-6" data-plan="deporte">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-person-arms-up fs-lg" style="color: #F08E21"
+                                        aria-hidden="true"></i>Entrenar en la calistenia del Parque Fúster</div>
+                            </div>
+                            <div class="col-12 sm:col-6" data-plan="deporte familia">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-heart-pulse-fill fs-lg" style="color: #F08E21"
+                                        aria-hidden="true"></i>Montar a caballo en el Centro Hípico</div>
+                            </div>
+                            <div class="col-12 sm:col-6" data-plan="cultura">
+                                <div class="d-flex align-items-center gap-2 border rounded p-2 h-100 small"><i
+                                        class="bi bi-bricks fs-lg" style="color: #F08E21" aria-hidden="true"></i>Visita
+                                    guiada a la Torre de Éboli</div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-12 lg:col-5">
+                        <div class="lg:sticky-top">
+                            <p class="text-uppercase fw-semibold small mb-3"
+                                style="color: #F08E21; letter-spacing: 0.12em"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>¿Sabías que…?</p>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Es el mismo Juan Carlos I que el de Madrid?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>No. El de Madrid está junto a
+                                            IFEMA y tiene unas 160 hectáreas; el de Pinto es un parque municipal propio,
+                                            con 55.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Hay búnkeres de la Guerra Civil en Pinto?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>Sí: en el entorno del Parque
+                                            Regional del Sureste se pueden visitar búnkeres de la Guerra Civil.</p>
+                                    </div>
+                                </div>
+                                <div class="card rounded-9 shadow-sm">
+                                    <div class="card-body p-3">
+                                        <button type="button"
+                                            class="w-100 d-flex align-items-center justify-content-between gap-2 border-0 bg-transparent p-0 text-start fw-bold"
+                                            style="color: inherit" data-revelar aria-expanded="false">
+                                            <span>¿Qué tiene de especial el lago desde 2026?</span>
+                                            <span
+                                                class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0"
+                                                style="width: 32px; height: 32px; background-color: #F08E21; color: #121212"><i
+                                                    class="bi bi-plus-lg" aria-hidden="true"></i></span>
+                                        </button>
+                                        <p class="small mt-3 mb-0 pt-3 border-top" hidden>Un sistema sostenible que
+                                            mejora la calidad del agua y favorece su equilibrio biológico, además de
+                                            iluminación y chorros ornamentales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
-                <div><button type="button" class="btn rounded-pill" data-paso="-1"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Anterior</button></div>
-                <div class="flex-grow-1" style="max-width: 280px">
-                    <p class="small text-center mb-1">Capítulo 4 de 4</p>
-                    <div class="rounded-pill border overflow-hidden" style="height: 8px"><div class="h-100" style="width: 100%; background-color: #F08E21"></div></div>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-5 pt-4 border-top">
+                    <div><button type="button" class="btn rounded-pill" data-paso="-1"><i class="bi bi-arrow-left me-1"
+                                aria-hidden="true"></i>Anterior</button></div>
+                    <div class="flex-grow-1" style="max-width: 280px">
+                        <p class="small text-center mb-1">Capítulo 4 de 4</p>
+                        <div class="rounded-pill border overflow-hidden" style="height: 8px">
+                            <div class="h-100" style="width: 100%; background-color: #F08E21"></div>
+                        </div>
+                    </div>
+                    <div></div>
                 </div>
-                <div></div>
-            </div>
-        </article>
+            </article>
 
-    </section>
-    <!-- =====================================================
+        </section>
+        <!-- =====================================================
          MÁS RINCONES DE PINTO: al pasar el ratón (o pulsar) aparece la información
          Solo clases de Bootstrap 6 (.fade/.show para el efecto) y tu clase .card
          ===================================================== -->
-    <section id="curiosidades" class="container py-5" style="color: var(--text-color)">
-        <div class="text-center mb-4">
-            <p class="text-uppercase fw-semibold small mb-2" style="color: #F08E21; letter-spacing: 0.12em">Para completar la visita</p>
-            <h2 class="fw-bold mb-2">Más rincones de Pinto</h2>
-            <p class="opacity-75 mb-0">Compras, ocio, deporte y rincones que no salen en las tarjetas de arriba. Pasa el ratón (o toca en el móvil) para descubrirlos.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-bag-fill" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Compras y cine</span>
+        <section id="curiosidades" class="container py-5" style="color: var(--text-color)">
+            <div class="text-center mb-4">
+                <p class="text-uppercase fw-semibold small mb-2" style="color: #F08E21; letter-spacing: 0.12em">Para
+                    completar la visita</p>
+                <h2 class="fw-bold mb-2">Más rincones de Pinto</h2>
+                <p class="opacity-75 mb-0">Compras, ocio, deporte y rincones que no salen en las tarjetas de arriba.
+                    Pasa el ratón (o toca en el móvil) para descubrirlos.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-bag-fill"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Compras y cine</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">Centro comercial Plaza Éboli</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
                         </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">Centro comercial Plaza Éboli</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>Centro comercial Plaza Éboli</p>
+                            <p class="mb-0">En la calle Pablo Picasso. Abrió con un centenar de tiendas, hipermercado y
+                                cines; hoy sus 8 salas son de Ocine. El plan para una tarde de lluvia.</p>
                         </div>
                     </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>Centro comercial Plaza Éboli</p>
-                        <p class="mb-0">En la calle Pablo Picasso. Abrió con un centenar de tiendas, hipermercado y cines; hoy sus 8 salas son de Ocine. El plan para una tarde de lluvia.</p>
+                </div>
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-rocket-takeoff-fill"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Escapada</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">Parque Warner</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
+                        </div>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>Parque Warner</p>
+                            <p class="mb-0">Está en San Martín de la Vega, pero se va desde aquí: el autobús 413 sale de
+                                la estación de Pinto (Cercanías C-3) y te deja en la puerta. Tiene una torre de caída de
+                                115 m.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-ticket-perforated-fill"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Cultura</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">Teatro Francisco Rabal</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
+                        </div>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>Teatro Francisco Rabal</p>
+                            <p class="mb-0">El gran escenario municipal de teatro, música y danza. Reabrió renovado el
+                                20 de marzo de 2026 con Lolita Flores interpretando «Poncia».</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-trophy-fill"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Deporte</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">Pinto deportivo</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
+                        </div>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>Pinto deportivo</p>
+                            <p class="mb-0">El polideportivo Príncipes de Asturias acoge el baloncesto de PintoBasket, y
+                                en el estadio Rafael Mendoza juegan los Pinto Goldbats, de fútbol americano.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-cup-hot-fill"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Historia</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">Chimenea de La Colonial</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
+                        </div>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>Chimenea de La Colonial</p>
+                            <p class="mb-0">Es lo que queda, junto a la «casita de chocolate» y un almacén, de la
+                                fábrica de chocolates que la Compañía Colonial levantó en Pinto en 1866.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-heart-fill"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Tradición</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">Ermita del Cristo del Calvario</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
+                        </div>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>Ermita del Cristo del Calvario</p>
+                            <p class="mb-0">Levantada entre los siglos XVII y XVIII, guarda una talla del Cristo del
+                                siglo XVI y la copia del libro fundacional de su hermandad, de 1714.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-flag-fill"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Barrio</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">El Prado y su cañada</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
+                        </div>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>El Prado y su cañada</p>
+                            <p class="mb-0">Barrio con ermita propia y un parque al final de la Cañada Real de la Mesta.
+                                A primeros de mayo celebra unas de las fiestas de barrio más populares.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6 lg:col-3">
+                    <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative"
+                        style="min-height: 240px" data-curio tabindex="0" role="button" aria-pressed="false">
+                        <!-- Cara delantera: el lugar -->
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-hammer"
+                                        aria-hidden="true"></i></span>
+                                <span class="rounded-pill border small px-2 py-1">Prehistoria</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-lg mb-2">Yacimiento de La Atalaya</p>
+                                <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1"
+                                        aria-hidden="true"></i>Pasa el ratón o pulsa</p>
+                            </div>
+                        </div>
+                        <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
+                            style="background-color: #F08E21; color: #121212" data-respuesta>
+                            <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1"
+                                    aria-hidden="true"></i>Yacimiento de La Atalaya</p>
+                            <p class="mb-0">Al oeste del casco urbano aparecieron 859 hoyos, sobre todo silos, de la
+                                Edad del Cobre y del Bronce, y más de 42.000 fragmentos de cerámica.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-rocket-takeoff-fill" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Escapada</span>
-                        </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">Parque Warner</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
-                        </div>
-                    </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>Parque Warner</p>
-                        <p class="mb-0">Está en San Martín de la Vega, pero se va desde aquí: el autobús 413 sale de la estación de Pinto (Cercanías C-3) y te deja en la puerta. Tiene una torre de caída de 115 m.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-ticket-perforated-fill" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Cultura</span>
-                        </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">Teatro Francisco Rabal</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
-                        </div>
-                    </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>Teatro Francisco Rabal</p>
-                        <p class="mb-0">El gran escenario municipal de teatro, música y danza. Reabrió renovado el 20 de marzo de 2026 con Lolita Flores interpretando «Poncia».</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Deporte</span>
-                        </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">Pinto deportivo</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
-                        </div>
-                    </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>Pinto deportivo</p>
-                        <p class="mb-0">El polideportivo Príncipes de Asturias acoge el baloncesto de PintoBasket, y en el estadio Rafael Mendoza juegan los Pinto Goldbats, de fútbol americano.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-cup-hot-fill" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Historia</span>
-                        </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">Chimenea de La Colonial</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
-                        </div>
-                    </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>Chimenea de La Colonial</p>
-                        <p class="mb-0">Es lo que queda, junto a la «casita de chocolate» y un almacén, de la fábrica de chocolates que la Compañía Colonial levantó en Pinto en 1866.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-heart-fill" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Tradición</span>
-                        </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">Ermita del Cristo del Calvario</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
-                        </div>
-                    </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>Ermita del Cristo del Calvario</p>
-                        <p class="mb-0">Levantada entre los siglos XVII y XVIII, guarda una talla del Cristo del siglo XVI y la copia del libro fundacional de su hermandad, de 1714.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-flag-fill" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Barrio</span>
-                        </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">El Prado y su cañada</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
-                        </div>
-                    </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>El Prado y su cañada</p>
-                        <p class="mb-0">Barrio con ermita propia y un parque al final de la Cañada Real de la Mesta. A primeros de mayo celebra unas de las fiestas de barrio más populares.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 sm:col-6 lg:col-3">
-                <div class="card h-100 rounded-9 shadow-sm overflow-hidden position-relative" style="min-height: 240px"
-                    data-curio tabindex="0" role="button" aria-pressed="false">
-                    <!-- Cara delantera: el lugar -->
-                    <div class="card-body p-4 d-flex flex-column justify-content-between">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <span class="fs-3xl" style="color: #F08E21"><i class="bi bi-hammer" aria-hidden="true"></i></span>
-                            <span class="rounded-pill border small px-2 py-1">Prehistoria</span>
-                        </div>
-                        <div>
-                            <p class="fw-bold fs-lg mb-2">Yacimiento de La Atalaya</p>
-                            <p class="small mb-0 opacity-75"><i class="bi bi-hand-index-thumb me-1" aria-hidden="true"></i>Pasa el ratón o pulsa</p>
-                        </div>
-                    </div>
-                    <!-- Lo que hay que saber: aparece encima con el efecto .fade de Bootstrap -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 d-flex flex-column justify-content-center fade"
-                        style="background-color: #F08E21; color: #121212" data-respuesta>
-                        <p class="text-uppercase fw-bold small mb-2"><i class="bi bi-lightbulb-fill me-1" aria-hidden="true"></i>Yacimiento de La Atalaya</p>
-                        <p class="mb-0">Al oeste del casco urbano aparecieron 859 hoyos, sobre todo silos, de la Edad del Cobre y del Bronce, y más de 42.000 fragmentos de cerámica.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-</main>
+    </main>
     <footer class="border-top border-1">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <small class="d-flex justify-content-center m-5">Todos los derechos reservados 2026/2027</small>
                 </div>
-    
+
                 <div class="col-6 d-flex justify-content-start">
                     <small class="m-5">Autor: Carlos Sánchez García</small>
                 </div>
-    
+
                 <div class="col-6 d-flex justify-content-end">
                     <small class="m-5">Curso: 2 DAM</small>
                 </div>
             </div>
         </div>
     </footer>
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
-    crossorigin="anonymous"></script>
-<!-- Interactividad del reportaje (puedes moverlo a script.js) -->
-<script>
-    (function () {
-        const reportaje = document.querySelector('#reportaje');
-        if (!reportaje) return;
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
+    <!-- Interactividad del reportaje (puedes moverlo a script.js) -->
+    <script>
+        (function () {
+            const reportaje = document.querySelector('#reportaje');
+            if (!reportaje) return;
 
-        const capitulos = [...reportaje.querySelectorAll('[data-cap]')];
-        const pestanas = [...reportaje.querySelectorAll('[data-ir-cap]')];
-        const orden = capitulos.map(c => c.dataset.cap);
-        let actual = orden[0];
+            const capitulos = [...reportaje.querySelectorAll('[data-cap]')];
+            const pestanas = [...reportaje.querySelectorAll('[data-ir-cap]')];
+            const orden = capitulos.map(c => c.dataset.cap);
+            let actual = orden[0];
 
-        /* ---- Cambiar de capítulo ---- */
-        function abrir(id, desplazar) {
-            if (!orden.includes(id)) return;
-            actual = id;
-            pestanas.forEach(p => {
-                const activa = p.dataset.irCap === id;
-                p.classList.toggle('opacity-50', !activa);
-                p.style.setProperty('border-color', activa ? '#F08E21' : 'transparent', 'important');
-                p.setAttribute('aria-selected', activa);
-            });
-            capitulos.forEach(c => {
-                if (c.dataset.cap === id) {
-                    c.classList.remove('d-none');
-                    requestAnimationFrame(() => c.classList.add('show'));
-                } else {
-                    c.classList.remove('show');
-                    c.classList.add('d-none');
+            /* ---- Cambiar de capítulo ---- */
+            function abrir(id, desplazar) {
+                if (!orden.includes(id)) return;
+                actual = id;
+                pestanas.forEach(p => {
+                    const activa = p.dataset.irCap === id;
+                    p.classList.toggle('opacity-50', !activa);
+                    p.style.setProperty('border-color', activa ? '#F08E21' : 'transparent', 'important');
+                    p.setAttribute('aria-selected', activa);
+                });
+                capitulos.forEach(c => {
+                    if (c.dataset.cap === id) {
+                        c.classList.remove('d-none');
+                        requestAnimationFrame(() => c.classList.add('show'));
+                    } else {
+                        c.classList.remove('show');
+                        c.classList.add('d-none');
+                    }
+                });
+                if (desplazar) reportaje.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#rep-' + id);
+            }
+
+            reportaje.addEventListener('click', e => {
+                const pestana = e.target.closest('[data-ir-cap]');
+                if (pestana) return abrir(pestana.dataset.irCap, false);
+
+                const paso = e.target.closest('[data-paso]');
+                if (paso) return abrir(orden[orden.indexOf(actual) + Number(paso.dataset.paso)], true);
+
+                /* ---- ¿Sabías que…?: mostrar / ocultar respuesta ---- */
+                const pregunta = e.target.closest('[data-revelar]');
+                if (pregunta) {
+                    const respuesta = pregunta.nextElementSibling;
+                    const abierta = respuesta.hidden;
+                    respuesta.hidden = !abierta;
+                    pregunta.setAttribute('aria-expanded', abierta);
+                    pregunta.querySelector('i').className = 'bi ' + (abierta ? 'bi-dash-lg' : 'bi-plus-lg');
+                    return;
+                }
+
+                /* ---- Elige tu plan: resaltar los planes que encajan ---- */
+                const filtro = e.target.closest('[data-plan-filtro]');
+                if (filtro) {
+                    const valor = filtro.dataset.planFiltro;
+                    reportaje.querySelectorAll('[data-plan-filtro]').forEach(b => {
+                        const on = b === filtro;
+                        b.style.backgroundColor = on ? '#F08E21' : 'transparent';
+                        b.style.color = on ? '#121212' : 'inherit';
+                        b.setAttribute('aria-pressed', on);
+                    });
+                    reportaje.querySelectorAll('[data-plan]').forEach(p => {
+                        const encaja = valor === 'todos' || p.dataset.plan.split(' ').includes(valor);
+                        p.classList.toggle('opacity-25', !encaja);
+                    });
                 }
             });
-            if (desplazar) reportaje.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            history.replaceState(null, '', '#rep-' + id);
-        }
 
-        reportaje.addEventListener('click', e => {
-            const pestana = e.target.closest('[data-ir-cap]');
-            if (pestana) return abrir(pestana.dataset.irCap, false);
-
-            const paso = e.target.closest('[data-paso]');
-            if (paso) return abrir(orden[orden.indexOf(actual) + Number(paso.dataset.paso)], true);
-
-            /* ---- ¿Sabías que…?: mostrar / ocultar respuesta ---- */
-            const pregunta = e.target.closest('[data-revelar]');
-            if (pregunta) {
-                const respuesta = pregunta.nextElementSibling;
-                const abierta = respuesta.hidden;
-                respuesta.hidden = !abierta;
-                pregunta.setAttribute('aria-expanded', abierta);
-                pregunta.querySelector('i').className = 'bi ' + (abierta ? 'bi-dash-lg' : 'bi-plus-lg');
-                return;
+            /* ---- Enlaces desde las tarjetas de arriba (#rep-patrimonio, etc.) ---- */
+            function desdeEnlace() {
+                const id = location.hash.replace('#rep-', '');
+                if (orden.includes(id)) abrir(id, true);
             }
-
-            /* ---- Elige tu plan: resaltar los planes que encajan ---- */
-            const filtro = e.target.closest('[data-plan-filtro]');
-            if (filtro) {
-                const valor = filtro.dataset.planFiltro;
-                reportaje.querySelectorAll('[data-plan-filtro]').forEach(b => {
-                    const on = b === filtro;
-                    b.style.backgroundColor = on ? '#F08E21' : 'transparent';
-                    b.style.color = on ? '#121212' : 'inherit';
-                    b.setAttribute('aria-pressed', on);
-                });
-                reportaje.querySelectorAll('[data-plan]').forEach(p => {
-                    const encaja = valor === 'todos' || p.dataset.plan.split(' ').includes(valor);
-                    p.classList.toggle('opacity-25', !encaja);
-                });
-            }
-        });
-
-        /* ---- Enlaces desde las tarjetas de arriba (#rep-patrimonio, etc.) ---- */
-        function desdeEnlace() {
-            const id = location.hash.replace('#rep-', '');
-            if (orden.includes(id)) abrir(id, true);
-        }
-        window.addEventListener('hashchange', desdeEnlace);
-        document.querySelectorAll('a[href^="#rep-"]').forEach(a => a.addEventListener('click', e => {
-            e.preventDefault();
-            abrir(a.getAttribute('href').replace('#rep-', ''), true);
-        }));
-        desdeEnlace();
-    })();
-</script>
-<!-- Más rincones: muestra la información con las clases .fade/.show de Bootstrap. Puedes moverlo a script.js -->
-<script>
-    document.querySelectorAll('#curiosidades [data-curio]').forEach(function (tarjeta) {
-        const respuesta = tarjeta.querySelector('[data-respuesta]');
-        let fija = false; // en móvil o con teclado se queda abierta hasta volver a pulsar
-
-        function mostrar(si) {
-            respuesta.classList.toggle('show', si);
-            tarjeta.setAttribute('aria-pressed', si);
-        }
-
-        tarjeta.addEventListener('mouseenter', function () { mostrar(true); });
-        tarjeta.addEventListener('mouseleave', function () { if (!fija) mostrar(false); });
-        tarjeta.addEventListener('click', function () { fija = !fija; mostrar(fija); });
-        tarjeta.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
+            window.addEventListener('hashchange', desdeEnlace);
+            document.querySelectorAll('a[href^="#rep-"]').forEach(a => a.addEventListener('click', e => {
                 e.preventDefault();
-                fija = !fija;
-                mostrar(fija);
+                abrir(a.getAttribute('href').replace('#rep-', ''), true);
+            }));
+            desdeEnlace();
+        })();
+    </script>
+    <!-- Más rincones: muestra la información con las clases .fade/.show de Bootstrap. Puedes moverlo a script.js -->
+    <script>
+        document.querySelectorAll('#curiosidades [data-curio]').forEach(function (tarjeta) {
+            const respuesta = tarjeta.querySelector('[data-respuesta]');
+            let fija = false; // en móvil o con teclado se queda abierta hasta volver a pulsar
+
+            function mostrar(si) {
+                respuesta.classList.toggle('show', si);
+                tarjeta.setAttribute('aria-pressed', si);
             }
+
+            tarjeta.addEventListener('mouseenter', function () { mostrar(true); });
+            tarjeta.addEventListener('mouseleave', function () { if (!fija) mostrar(false); });
+            tarjeta.addEventListener('click', function () { fija = !fija; mostrar(fija); });
+            tarjeta.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    fija = !fija;
+                    mostrar(fija);
+                }
+            });
         });
-    });
-</script>
+    </script>
     <script src="script.js"></script>
 </body>
+
 </html>
