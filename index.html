@@ -739,6 +739,29 @@
             white-space: nowrap;
         }
 
+        @media (max-width: 400px) {
+            .servicio .dato {
+                flex-wrap: wrap;
+            }
+        }
+
+        .servicio,
+        .visor .ficha {
+            overflow-wrap: anywhere;
+        }
+
+        /* Chips de líneas: más compactos en móvil */
+        @media (max-width: 575.98px) {
+            .lineas .chip {
+                padding: .35rem .7rem;
+                font-size: .68rem;
+            }
+
+            .transporte .cabecera .lema {
+                max-width: none;
+            }
+        }
+
         .servicio .nota-pie {
             font-size: .78rem;
             color: var(--suave);
@@ -792,13 +815,23 @@
         .visor {
             display: grid;
             gap: 1.1rem;
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
+            /* minmax(0,…) evita que el horario ensanche la columna */
             align-items: start;
+        }
+
+        .visor>* {
+            min-width: 0;
         }
 
         @media (min-width: 992px) {
             .visor {
-                grid-template-columns: 320px minmax(0, 1fr);
+                grid-template-columns: 300px minmax(0, 1fr);
+            }
+
+            .visor .ficha {
+                position: sticky;
+                top: 1rem;
             }
         }
 
@@ -832,35 +865,73 @@
         }
 
         .visor .ficha .botonera {
-            flex-direction: column;
-            align-items: stretch;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 992px) {
+            .visor .ficha .botonera {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
 
         .visor .ficha .btn-sec {
             justify-content: center;
         }
 
+
+
+
+        .lamina {
+            position: relative;
+            overflow: auto;
+            max-height: 80vh;
+            background: #fff;
+            border: 1px solid var(--borde);
+            border-radius: 1.1rem;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .lamina a {
+            display: block;
+            cursor: zoom-in;
+        }
+
+        .lamina img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .lamina a+a img {
+            border-top: 4px solid #e6dfdb;
+        }
+
         .sentidos {
             display: inline-flex;
             gap: .3rem;
             padding: .3rem;
-            margin-bottom: .8rem;
+            margin-bottom: .7rem;
             background: var(--superficie);
             border: 1px solid var(--borde);
             border-radius: 999px;
+            max-width: 100%;
         }
 
         .sentido {
-            min-height: 2.3rem;
-            padding: .4rem 1rem;
+            min-height: 2.5rem;
+            padding: .45rem 1.2rem;
             border: 0;
             border-radius: 999px;
             background: transparent;
             color: var(--texto);
             font: inherit;
-            font-size: .85rem;
+            font-size: .88rem;
             font-weight: 700;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .sentido.activo {
@@ -868,21 +939,23 @@
             color: #1b1b1b;
         }
 
-        .lamina {
-            position: relative;
-            overflow: auto;
-            max-height: 75vh;
-            background: #fff;
-            border: 1px solid var(--borde);
-            border-radius: 1.1rem;
-            -webkit-overflow-scrolling: touch;
+        @media (max-width: 575.98px) {
+            .sentidos {
+                display: flex;
+            }
+
+            .sentido {
+                flex: 1;
+            }
         }
 
-        .lamina img {
-            display: block;
-            width: 100%;
-            min-width: 640px;
-            height: auto;
+        .pista-ampliar {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            margin: 0 0 .6rem;
+            font-size: .8rem;
+            color: var(--suave);
         }
 
         .lamina .cargando,
@@ -906,6 +979,19 @@
             margin-top: .6rem;
             font-size: .78rem;
             color: var(--suave);
+        }
+
+        /* ---------- Mapa ---------- */
+        #mapa iframe {
+            aspect-ratio: 16 / 9;
+            min-height: 320px;
+            max-height: 520px;
+        }
+
+        @media (max-width: 575.98px) {
+            #mapa iframe {
+                aspect-ratio: 4 / 5;
+            }
         }
 
         /* ---------- Pie ---------- */
@@ -1736,8 +1822,8 @@
                 <div class="horarios" id="horarios">
                     <span class="antetitulo">Horarios de autobuses</span>
                     <h3>Autobuses que pasan por Pinto</h3>
-                    <small class="suave">Elige una línea para ver su horario de ida y vuelta (laborables, fines de
-                        semana y festivos).</small>
+                    <small class="suave">Elige una línea y el sentido para ver su horario (laborables, fines de semana y
+                        festivos).</small>
 
                     <div id="lineas" class="chips lineas" role="tablist" aria-label="Líneas"></div>
 
@@ -1745,9 +1831,13 @@
                         <div class="ficha" id="fichaLinea"></div>
                         <div>
                             <div class="sentidos" role="tablist" aria-label="Sentido">
-                                <button type="button" class="sentido activo" data-sentido="0">Ida</button>
-                                <button type="button" class="sentido" data-sentido="1">Vuelta</button>
+                                <button type="button" class="sentido activo" role="tab" aria-selected="true"
+                                    data-sentido="0"><i class="bi bi-arrow-right"></i> Ida</button>
+                                <button type="button" class="sentido" role="tab" aria-selected="false"
+                                    data-sentido="1"><i class="bi bi-arrow-left"></i> Vuelta</button>
                             </div>
+                            <p class="pista-ampliar"><i class="bi bi-zoom-in"></i> Toca el horario para verlo a tamaño
+                                completo.</p>
                             <div class="lamina" id="laminaHorario"></div>
                             <p class="aviso-horario" id="fuenteHorario"></p>
                         </div>
@@ -2727,7 +2817,7 @@
             const pagina = (l) => `${WEB}${l.carpeta}/horarios-${l.slug}.html`;
             const imagen = (l, sentido) => `${WEB}img/${l.carpeta}/horario-${sentido === 0 ? 'ida' : 'vuelta'}-linea-${l.slug}-completo.png`;
 
-            const estadoT = { linea: 5, sentido: 0 };   // empieza en la 421
+            const estadoT = { linea: 5, sentido: 0 };   // empieza en la 421, sentido ida
 
             function pintarLineas() {
                 $('#lineas').innerHTML = LINEAS.map((l, i) => `
@@ -2743,28 +2833,41 @@
                     <h4>${l.titulo}</h4>
                     <p>Autobús ${l.tipo.toLowerCase()}. Horarios de ida y vuelta para días laborables, fines de semana y festivos.</p>
                     <div class="botonera">
-                        <a class="btn-sec" href="${imagen(l, 0)}" target="_blank" rel="noopener"><i class="bi bi-arrows-fullscreen"></i> Ampliar horario de ida</a>
-                        <a class="btn-sec" href="${imagen(l, 1)}" target="_blank" rel="noopener"><i class="bi bi-arrows-fullscreen"></i> Ampliar horario de vuelta</a>
                         <a class="btn-sec" href="${pagina(l)}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Ver la línea ${l.num}</a>
                     </div>`;
                 $('#fuenteHorario').innerHTML = `<i class="bi bi-info-circle"></i> Fuente: <a href="${pagina(l)}" target="_blank" rel="noopener" style="color:var(--naranja)">madridbuses.com</a>. Los horarios pueden cambiar en verano y festivos.`;
             }
 
+            // Muestra el horario del sentido elegido. Al tocarlo se abre a tamaño completo.
             function pintarLamina() {
                 const l = LINEAS[estadoT.linea];
-                document.querySelectorAll('.sentido').forEach(b => b.classList.toggle('activo', Number(b.dataset.sentido) === estadoT.sentido));
+                const sentido = estadoT.sentido;
+                document.querySelectorAll('.sentido').forEach(b => {
+                    const activo = Number(b.dataset.sentido) === sentido;
+                    b.classList.toggle('activo', activo);
+                    b.setAttribute('aria-selected', activo);
+                });
                 const lamina = $('#laminaHorario');
-                lamina.innerHTML = `<div class="cargando"><i class="bi bi-hourglass-split"></i> Cargando horario de la línea ${l.num}...</div>`;
+                lamina.innerHTML = `<div class="cargando"><i class="bi bi-hourglass-split"></i> Cargando horario de ${sentido === 0 ? 'ida' : 'vuelta'} de la línea ${l.num}...</div>`;
                 const img = new Image();
-                img.alt = `Horario de la línea ${l.num} (${estadoT.sentido === 0 ? 'ida' : 'vuelta'})`;
+                img.alt = `Horario de ${sentido === 0 ? 'ida' : 'vuelta'} de la línea ${l.num}`;
                 img.referrerPolicy = 'no-referrer';
-                img.onload = () => { lamina.innerHTML = ''; lamina.appendChild(img); lamina.scrollTop = 0; };
+                img.onload = () => {
+                    if (LINEAS[estadoT.linea] !== l || estadoT.sentido !== sentido) return;   // el usuario ya cambió
+                    const a = Object.assign(document.createElement('a'), { href: img.src, target: '_blank', rel: 'noopener' });
+                    a.setAttribute('aria-label', `Ver a tamaño completo el horario de la línea ${l.num}`);
+                    a.appendChild(img);
+                    lamina.innerHTML = '';
+                    lamina.appendChild(a);
+                    lamina.scrollTop = 0;
+                };
                 img.onerror = () => {
+                    if (LINEAS[estadoT.linea] !== l || estadoT.sentido !== sentido) return;
                     lamina.innerHTML = `<div class="sin-horario"><i class="bi bi-image"></i>
                         <span>No se ha podido mostrar el horario aquí.</span>
                         <a class="btn-rojo" href="${pagina(l)}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Ver el horario de la línea ${l.num}</a></div>`;
                 };
-                img.src = imagen(l, estadoT.sentido);
+                img.src = imagen(l, sentido);
             }
 
             $('#lineas').addEventListener('click', (e) => {
@@ -2774,6 +2877,7 @@
                 estadoT.sentido = 0;
                 pintarLineas(); pintarFicha(); pintarLamina();
             });
+
             document.querySelector('.sentidos').addEventListener('click', (e) => {
                 const b = e.target.closest('[data-sentido]');
                 if (!b) return;
