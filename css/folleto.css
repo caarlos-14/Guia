@@ -1,0 +1,156 @@
+        .cta-pueblo {
+            --fondo: var(--bg-color, #2b2523);
+            --texto: var(--text-color, #f3ece8);
+            --naranja: #F08E21;
+            --suave: #b9aca6;
+            --borde: rgba(255, 255, 255, .12);
+            --acento: #f5c9a3;
+            padding: clamp(1.5rem, 5vw, 3rem) 1rem;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        @supports (color: color-mix(in srgb, red, blue)) {
+            .cta-pueblo {
+                --suave: color-mix(in srgb, var(--texto) 65%, var(--fondo));
+                --borde: color-mix(in srgb, var(--texto) 14%, transparent);
+                --acento: color-mix(in srgb, var(--naranja) 55%, var(--texto));
+            }
+        }
+
+        .cta-pueblo *,
+        .cta-pueblo *::before,
+        .cta-pueblo *::after {
+            box-sizing: border-box;
+        }
+
+        .cta-pueblo .tarjeta-cta {
+            position: relative;
+            overflow: hidden;
+            width: min(1400px, 100%);
+            margin-inline: auto;
+            padding: clamp(1.5rem, 5vw, 3rem);
+            border: 1px solid var(--borde);
+            border-radius: 1.5rem;
+            color: var(--texto);
+            background:
+                radial-gradient(circle at 0% 0%, rgba(240, 142, 33, .22), transparent 55%),
+                linear-gradient(120deg, #4a2a22 0%, #3a3331 55%, #2f2827 100%);
+        }
+
+        .cta-pueblo .contenido {
+            position: relative;
+            z-index: 1;
+            max-width: 40rem;
+        }
+
+        .cta-pueblo .ante {
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--acento);
+        }
+
+        .cta-pueblo h2 {
+            font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -.01em;
+            margin: .6rem 0 .9rem;
+            color: #f3ece8;
+        }
+
+        .cta-pueblo p {
+            margin: 0;
+            font-size: clamp(.9rem, 2vw, 1rem);
+            line-height: 1.55;
+            color: #cfc3bd;
+        }
+
+        .cta-pueblo .botones {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 576px) {
+            .cta-pueblo .botones {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        .cta-pueblo .boton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            min-height: 3rem;
+            padding: .75rem 1.4rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: .95rem;
+            text-decoration: none;
+            transition: transform .15s, background .2s, border-color .2s;
+        }
+
+        .cta-pueblo .boton:active {
+            transform: scale(.97);
+        }
+
+        .cta-pueblo .principal {
+            background: var(--naranja);
+            color: #1b1b1b;
+        }
+
+        .cta-pueblo .principal:hover {
+            background: #ffa23f;
+            color: #1b1b1b;
+        }
+
+        .cta-pueblo .secundario {
+            background: rgba(255, 255, 255, .08);
+            color: #f3ece8;
+            border: 1px solid rgba(255, 255, 255, .18);
+        }
+
+        .cta-pueblo .secundario:hover {
+            background: rgba(255, 255, 255, .15);
+            border-color: var(--naranja);
+            color: #fff;
+        }
+
+        .cta-pueblo .boton small {
+            font-weight: 500;
+            opacity: .65;
+        }
+
+        .cta-pueblo .boton:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 3px;
+        }
+
+        /* Castillo decorativo: se oculta en móvil para no tapar el texto */
+        .cta-pueblo .castillo {
+            position: absolute;
+            right: clamp(1rem, 5vw, 4rem);
+            top: 50%;
+            transform: translateY(-50%);
+            width: clamp(120px, 18vw, 200px);
+            color: #f3ece8;
+            opacity: .1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 767.98px) {
+            .cta-pueblo .castillo {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cta-pueblo .boton {
+                transition: none;
+            }
+        }

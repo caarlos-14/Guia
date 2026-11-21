@@ -21,23 +21,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
     enlaces.forEach(enlace => {
         if (enlace.getAttribute("href")?.endsWith(paginaActual)) {
             enlace.classList.remove("text-decoration-none");
-            enlace.classList.add("fg-primary", "fw-bold", "underline-primary", "underline-thickness-3", "underline-offset-3");
+            enlace.classList.add("underline","fg-primary", "fw-bold", "underline-primary", "underline-thickness-3", "underline-offset-3");
             enlace.style.textDecorationColor = "#F08E21";
         }
     });
 
-    enlaces.forEach(enlace => {
-        enlace.addEventListener("click", (e) => {
-            const destino = enlace.getAttribute("href");
-            if (destino && destino.endsWith(".html")) {
-                e.preventDefault();
-                document.body.classList.remove("fade-in");
-            
-                setTimeout(() => {
-                    window.location.href = destino;
-                }, 400);
-            }
-        });
+enlaces.forEach(enlace => {
+        const href = (enlace.getAttribute("href") || "").split("?")[0].split("#")[0].toLowerCase();
+        if (href && href.endsWith(paginaActual)) {
+            enlace.classList.remove("text-decoration-none");
+            enlace.classList.add("fw-bold");
+            enlace.style.setProperty("text-decoration-line", "underline", "important");
+            enlace.style.setProperty("text-decoration-color", "#F08E21", "important");
+            enlace.style.setProperty("text-decoration-thickness", "3px", "important");
+            enlace.style.setProperty("text-underline-offset", "5px", "important");
+        }
     });
 
 });

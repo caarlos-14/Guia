@@ -1,0 +1,861 @@
+/* ==========================================================
+   guia.css · Estilos de la guía de Pinto (pueblo.html)
+   Solo AÑADE clases con prefijo "g-". No modifica styles.css.
+   Paleta: naranja #F08E21 · rojo #C22F22 · negro #121212
+   Las fichas son oscuras tanto en modo claro como oscuro.
+   ========================================================== */
+
+:root {
+    --g-naranja: #F08E21;
+    --g-rojo: #C22F22;
+    --g-negro: #121212;
+    --g-card: #1E1E1E;
+    --g-card-2: #2A2A2A;
+    --g-borde: rgba(250, 249, 246, 0.12);
+    --g-texto: #FAF9F6;
+    --g-muted: rgba(250, 249, 246, 0.72);
+}
+
+.g-solo-lector {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ---------- HERO ---------- */
+.g-hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 0 2rem;
+    color: var(--text-color);
+}
+
+@media (min-width: 992px) {
+    .g-hero {
+        grid-template-columns: 1.7fr 1fr;
+    }
+}
+
+.g-pildoras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1.25rem;
+}
+
+.g-pildora {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .35rem .85rem;
+    border-radius: 999px;
+    background: var(--g-card);
+    color: var(--g-naranja);
+    border: 1px solid var(--g-borde);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.g-pildora-roja {
+    background: var(--g-rojo);
+    color: #fff;
+    border-color: transparent;
+}
+
+.g-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.g-hero h1 span {
+    color: var(--g-naranja);
+}
+
+.g-hero p {
+    max-width: 62ch;
+    line-height: 1.65;
+    opacity: .9;
+}
+
+.g-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    padding: 1.25rem;
+    text-align: center;
+    background: var(--g-card);
+    color: var(--g-texto);
+    border: 1px solid var(--g-borde);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+.g-num {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--g-naranja);
+    line-height: 1.1;
+}
+
+.g-num-t {
+    display: block;
+    margin-top: .3rem;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--g-muted);
+}
+
+/* ---------- FILTROS ---------- */
+.g-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .6rem;
+    padding: .9rem 1.1rem;
+    margin-bottom: 2rem;
+    background: var(--g-card);
+    color: var(--g-texto);
+    border: 1px solid var(--g-borde);
+    border-radius: 1.25rem;
+}
+
+.g-filtros-t {
+    margin-right: .5rem;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--g-muted);
+}
+
+.g-chip {
+    padding: .4rem .95rem;
+    border-radius: 999px;
+    border: 1px solid var(--g-borde);
+    background: var(--g-card-2);
+    color: var(--g-texto);
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+.g-chip:hover {
+    border-color: var(--g-naranja);
+}
+
+.g-chip[aria-pressed="true"] {
+    background: var(--g-naranja);
+    border-color: var(--g-naranja);
+    color: var(--g-negro);
+    font-weight: 800;
+}
+
+.g-chip:focus-visible,
+.g-btn:focus-visible {
+    outline: 3px solid var(--g-naranja);
+    outline-offset: 2px;
+}
+
+/* ---------- LISTA DE LUGARES ---------- */
+.g-lista {
+    display: grid;
+    gap: 2rem;
+}
+
+.g-card {
+    background: var(--g-card);
+    color: var(--g-texto);
+    border: 1px solid var(--g-borde);
+    border-radius: 1.75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+.g-lugar[hidden] {
+    display: none;
+}
+
+.g-fila {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+    .g-fila {
+        grid-template-columns: 5fr 7fr;
+    }
+
+    .g-fila.g-inv {
+        grid-template-columns: 7fr 5fr;
+    }
+
+    .g-fila.g-inv .g-media-col {
+        order: 2;
+    }
+}
+
+.g-media-col {
+    display: flex;
+    flex-direction: column;
+    background: var(--g-card-2);
+}
+
+.g-media {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 260px;
+}
+
+.g-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.g-badge {
+    position: absolute;
+    top: .9rem;
+    left: .9rem;
+    padding: .3rem .75rem;
+    border-radius: 999px;
+    background: var(--g-naranja);
+    color: var(--g-negro);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.g-badge-der {
+    left: auto;
+    right: .9rem;
+}
+
+.g-badge-rojo {
+    background: var(--g-rojo);
+    color: #fff;
+}
+
+.g-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+    padding: 1rem;
+}
+
+.g-dato {
+    padding: .7rem .9rem;
+    border-radius: 1rem;
+    background: var(--g-card);
+    border: 1px solid var(--g-borde);
+    font-size: .85rem;
+}
+
+.g-dato-t {
+    display: block;
+    margin-bottom: .15rem;
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--g-muted);
+}
+
+.g-cuerpo {
+    padding: 1.5rem;
+}
+
+@media (min-width: 992px) {
+    .g-cuerpo {
+        padding: 2.25rem;
+    }
+}
+
+.g-eyebrow {
+    margin: 0 0 .5rem;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--g-naranja);
+}
+
+.g-eyebrow span {
+    color: var(--g-muted);
+    font-weight: 600;
+}
+
+.g-titulo {
+    margin: 0 0 1rem;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.g-titulo small {
+    display: block;
+    font-size: .55em;
+    font-weight: 600;
+    color: var(--g-muted);
+}
+
+.g-cuerpo p {
+    line-height: 1.65;
+    color: var(--g-muted);
+}
+
+.g-dos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.g-box {
+    padding: 1rem 1.15rem;
+    border-radius: 1.1rem;
+    background: var(--g-card-2);
+    border: 1px solid var(--g-borde);
+}
+
+.g-box h4 {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 0 .5rem;
+    font-size: .95rem;
+    font-weight: 800;
+    color: var(--g-texto);
+}
+
+.g-box h4 i {
+    color: var(--g-naranja);
+}
+
+.g-box p {
+    margin: 0;
+    font-size: .88rem;
+}
+
+.g-pie {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--g-borde);
+}
+
+.g-pie .g-consejo {
+    flex: 1 1 260px;
+    margin: 0;
+    font-size: .85rem;
+}
+
+.g-consejo i {
+    color: var(--g-naranja);
+}
+
+.g-consejo strong {
+    color: var(--g-texto);
+}
+
+.g-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+/* ---------- BOTONES ---------- */
+.g-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .6rem 1.15rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--g-naranja);
+    color: var(--g-negro);
+    font-size: .85rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.g-btn:hover {
+    filter: brightness(1.12);
+    color: var(--g-negro);
+}
+
+.g-btn-rojo {
+    background: var(--g-rojo);
+    color: #fff;
+}
+
+.g-btn-rojo:hover {
+    color: #fff;
+}
+
+.g-btn-claro {
+    background: var(--g-card);
+    border-color: var(--g-borde);
+    color: var(--g-texto);
+}
+
+.g-btn-claro:hover {
+    color: var(--g-texto);
+    border-color: var(--g-naranja);
+}
+
+/* ---------- CONSEJOS ---------- */
+.g-seccion-cab {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3.5rem 0 1.5rem;
+    color: var(--text-color);
+}
+
+.g-seccion-cab h2 {
+    margin: .6rem 0 .4rem;
+    font-weight: 800;
+}
+
+.g-seccion-cab p {
+    margin: 0;
+    max-width: 60ch;
+    opacity: .85;
+}
+
+.g-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.g-tip {
+    padding: 1.4rem;
+    background: var(--g-card);
+    color: var(--g-texto);
+    border: 1px solid var(--g-borde);
+    border-radius: 1.4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+
+.g-tip-icono {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-bottom: .9rem;
+    border-radius: 50%;
+    background: var(--g-naranja);
+    color: var(--g-negro);
+    font-size: 1.15rem;
+}
+
+.g-tip h3 {
+    margin: 0 0 .4rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.g-tip p {
+    margin: 0;
+    font-size: .88rem;
+    line-height: 1.6;
+    color: var(--g-muted);
+}
+
+.g-tip a {
+    color: var(--g-naranja);
+}
+
+/* ---------- MAPA ---------- */
+.g-mapa-caja {
+    padding: 1.25rem;
+    background: var(--g-card);
+    color: var(--g-texto);
+    border: 1px solid var(--g-borde);
+    border-radius: 1.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+.g-mapa-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.g-mapa {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+    border-radius: 1.25rem;
+    background: var(--g-card-2);
+}
+
+.g-ruta-t {
+    margin: 1.25rem 0 .6rem;
+    font-size: .95rem;
+    font-weight: 800;
+}
+
+.g-ruta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.g-ruta li {
+    padding: .35rem .85rem;
+    border-radius: 999px;
+    background: var(--g-card-2);
+    border: 1px solid var(--g-borde);
+    font-size: .82rem;
+}
+
+.g-ruta li:not(:last-child)::after {
+    content: "\2192";
+    margin-left: .6rem;
+    color: var(--g-naranja);
+    font-weight: 800;
+}
+
+/* ---------- FUENTES ---------- */
+.g-fuentes {
+    margin: 2.5rem 0 1rem;
+    font-size: .8rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    opacity: .8;
+}
+
+.g-fuentes a {
+    color: inherit;
+}
+
+/* ---------- BUSCADOR, CHIPS Y ESTADO (lugares generados desde lugares.js) ---------- */
+.g-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.g-chip-n {
+    margin-left: .25rem;
+    padding: 0 .4rem;
+    border-radius: 999px;
+    background: rgba(250, 249, 246, .14);
+    font-size: .72rem;
+}
+
+.g-chip[aria-pressed="true"] .g-chip-n {
+    background: rgba(18, 18, 18, .18);
+}
+
+.g-buscar {
+    flex: 1 1 200px;
+    max-width: 280px;
+    margin-left: auto;
+    padding: .45rem .95rem;
+    border-radius: 999px;
+    border: 1px solid var(--g-borde);
+    background: var(--g-card-2);
+    color: var(--g-texto);
+    font-size: .85rem;
+}
+
+.g-buscar::placeholder {
+    color: var(--g-muted);
+}
+
+.g-buscar:focus-visible {
+    outline: 3px solid var(--g-naranja);
+    outline-offset: 2px;
+}
+
+.g-estado-filtro {
+    margin: -1rem 0 1.5rem;
+    font-size: .85rem;
+    color: var(--text-color);
+    opacity: .8;
+}
+
+.g-seccion-cab.g-compacta {
+    margin-top: 1rem;
+}
+
+.g-sin-resultados {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.g-sin-resultados[hidden],
+.g-estado-filtro[hidden] {
+    display: none;
+}
+
+section[hidden] {
+    display: none;
+}
+
+/* ---------- TARJETAS DE LUGAR ---------- */
+.g-grid-lugares {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.25rem;
+}
+
+.g-mini {
+    display: flex;
+    flex-direction: column;
+}
+
+.g-mini-img {
+    position: relative;
+    height: 180px;
+    background: var(--g-card-2);
+}
+
+.g-mini-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.g-mini-cuerpo {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 1.15rem 1.25rem 1.25rem;
+}
+
+.g-mini-t {
+    margin: 0 0 .35rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.g-mini-dir {
+    margin: 0 0 .6rem;
+    font-size: .8rem;
+    color: var(--g-muted);
+}
+
+.g-mini-dir i {
+    color: var(--g-naranja);
+}
+
+.g-mini-desc {
+    margin: 0 0 1rem;
+    font-size: .86rem;
+    line-height: 1.6;
+    color: var(--g-muted);
+}
+
+.g-mini-pie {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+    margin-top: auto;
+    padding-top: .9rem;
+    border-top: 1px solid var(--g-borde);
+}
+
+.g-estado {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--g-texto);
+}
+
+.g-estado i {
+    color: var(--g-naranja);
+}
+
+.g-mini .g-btn {
+    padding: .4rem .85rem;
+    font-size: .78rem;
+}
+
+/* Imagen que no existe: icono en su lugar */
+.g-sin-img {
+    display: grid;
+    place-items: center;
+    background: var(--g-card-2);
+}
+
+.g-img-icono {
+    font-size: 2.5rem;
+    color: var(--g-muted);
+}
+
+.g-sin-img .g-badge {
+    z-index: 1;
+}
+
+/* ---------- VISOR DE PDF (plano.html) ---------- */
+.g-visor {
+    padding: 2rem 0 1rem;
+}
+
+.g-visor-barra {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-bottom: 1rem;
+}
+
+.g-visor-marco {
+    overflow: hidden;
+    background: var(--g-card);
+    border: 1px solid var(--g-borde);
+    border-radius: 1.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+.g-visor-pdf {
+    display: block;
+    width: 100%;
+    height: 70vh;
+    height: 70dvh;
+    min-height: 420px;
+    border: 0;
+    background: var(--g-card-2);
+}
+
+/* El plano es apaisado (≈ 1,41:1): en pantallas anchas se ve entero sin barras */
+@media (min-width: 768px) {
+    .g-visor-pdf {
+        height: auto;
+        min-height: 0;
+        max-height: 85vh;
+        aspect-ratio: 1207 / 859;
+    }
+}
+
+.g-visor-pdf[hidden] {
+    display: none;
+}
+
+.g-visor-aviso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .9rem;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--g-texto);
+}
+
+.g-visor-aviso[hidden] {
+    display: none;
+}
+
+.g-visor-aviso i {
+    font-size: 2.5rem;
+    color: var(--g-naranja);
+}
+
+.g-visor-aviso p {
+    margin: 0;
+    max-width: 38ch;
+    color: var(--g-muted);
+}
+
+/* ---------- PLANO COMO IMAGEN AMPLIABLE (plano-imagen.html) ---------- */
+.g-visor-scroll {
+    overflow: auto;
+    max-height: 85vh;
+    background: var(--g-card-2);
+    -webkit-overflow-scrolling: touch;
+}
+
+.g-visor-scroll:focus-visible {
+    outline: 3px solid var(--g-naranja);
+    outline-offset: -3px;
+}
+
+.g-plano {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+}
+
+.g-plano.g-zoom {
+    width: 220%;
+    max-width: none;
+    cursor: zoom-out;
+}
+
+@media (max-width: 767px) {
+    .g-plano.g-zoom {
+        width: 320%;
+    }
+}
+
+/* ---------- VISOR: sigue tu modo claro/oscuro (variables de styles.css) ---------- */
+.g-visor-marco {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-color: color-mix(in srgb, var(--text-color) 25%, transparent);
+}
+
+.g-visor-scroll,
+.g-visor-pdf {
+    background: var(--bg-color);
+}
+
+.g-visor .g-btn-claro {
+    background: transparent;
+    color: var(--text-color);
+    border-color: color-mix(in srgb, var(--text-color) 35%, transparent);
+}
+
+.g-visor .g-btn-claro:hover {
+    color: var(--text-color);
+    border-color: var(--g-naranja);
+}
+
+.g-visor-aviso {
+    color: var(--text-color);
+}
+
+.g-visor-aviso p {
+    color: inherit;
+    opacity: .8;
+}

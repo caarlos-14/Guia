@@ -1,0 +1,375 @@
+
+
+
+/*====*/
+    /* ---------- Transporte y horarios ---------- */
+    .transporte {
+        padding-block: clamp(2rem, 6vw, 4rem);
+    }
+
+    .transporte .cabecera .lema {
+        display: block;
+        max-width: 24rem;
+    }
+
+    .servicios {
+        display: grid;
+        gap: 1.1rem;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .servicios {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1100px) {
+        .servicios {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .servicio {
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+        padding: 1.25rem;
+        background: var(--superficie);
+        border: 1px solid var(--borde);
+        border-radius: 1.1rem;
+    }
+
+    .servicio .ico {
+        width: 2.75rem;
+        height: 2.75rem;
+        display: grid;
+        place-items: center;
+        border-radius: .75rem;
+        font-size: 1.25rem;
+    }
+
+    .servicio h3 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin: .2rem 0 0;
+    }
+
+    .servicio p {
+        margin: 0;
+        font-size: .88rem;
+        color: var(--suave);
+        line-height: 1.55;
+    }
+
+    .servicio .dato {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .5rem;
+        margin-top: auto;
+        padding: .5rem .75rem;
+        border-radius: .7rem;
+        background: var(--superficie-2);
+        font-size: .75rem;
+        font-weight: 700;
+    }
+
+    .servicio .dato b {
+        color: #3fbf7f;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 400px) {
+        .servicio .dato {
+            flex-wrap: wrap;
+        }
+    }
+
+    .servicio,
+    .visor .ficha {
+        overflow-wrap: anywhere;
+    }
+
+    /* Chips de líneas: más compactos en móvil */
+    @media (max-width: 575.98px) {
+        .lineas .chip {
+            padding: .35rem .7rem;
+            font-size: .68rem;
+        }
+
+        .transporte .cabecera .lema {
+            max-width: none;
+        }
+    }
+
+    .servicio .nota-pie {
+        font-size: .78rem;
+        color: var(--suave);
+        border-top: 1px solid var(--borde);
+        padding-top: .7rem;
+    }
+
+    .servicio .enlace {
+        color: var(--naranja);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .servicio .enlace:hover {
+        text-decoration: underline;
+    }
+
+    .pueblo .antetitulo {
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--suave);
+    }
+
+    .horarios {
+        margin-top: 2.5rem;
+    }
+
+    .horarios h3 {
+        font-size: clamp(1.3rem, 3vw, 1.7rem);
+        font-weight: 800;
+        margin: .2rem 0 .3rem;
+    }
+
+    .lineas {
+        margin: 1rem 0 1.1rem;
+    }
+
+    .chip .linea-num {
+        display: inline-block;
+        min-width: 2.2rem;
+        padding: .05rem .4rem;
+        margin-right: .35rem;
+        border-radius: .4rem;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 0;
+    }
+
+    .visor {
+        display: grid;
+        gap: 1.1rem;
+        grid-template-columns: minmax(0, 1fr);
+        /* minmax(0,…) evita que el horario ensanche la columna */
+        align-items: start;
+    }
+
+    .visor>* {
+        min-width: 0;
+    }
+
+    @media (min-width: 992px) {
+        .visor {
+            grid-template-columns: 300px minmax(0, 1fr);
+        }
+
+        .visor .ficha {
+            position: sticky;
+            top: 1rem;
+        }
+    }
+
+    .visor .ficha {
+        padding: 1.2rem;
+        background: var(--superficie);
+        border: 1px solid var(--borde);
+        border-radius: 1.1rem;
+    }
+
+    .visor .ficha .badge-linea {
+        display: inline-block;
+        padding: .2rem .65rem;
+        border-radius: .5rem;
+        color: #fff;
+        font-weight: 800;
+        font-size: 1.1rem;
+    }
+
+    .visor .ficha h4 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin: .7rem 0 .4rem;
+        line-height: 1.35;
+    }
+
+    .visor .ficha p {
+        font-size: .88rem;
+        color: var(--suave);
+        margin: 0 0 1rem;
+    }
+
+    .visor .ficha .botonera {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    @media (min-width: 992px) {
+        .visor .ficha .botonera {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    .visor .ficha .btn-sec {
+        justify-content: center;
+    }
+
+
+
+
+    .lamina {
+        position: relative;
+        overflow: auto;
+        max-height: 80vh;
+        background: #fff;
+        border: 1px solid var(--borde);
+        border-radius: 1.1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .lamina a {
+        display: block;
+        cursor: zoom-in;
+    }
+
+    .lamina img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .lamina a+a img {
+        border-top: 4px solid #e6dfdb;
+    }
+
+    .sentidos {
+        display: inline-flex;
+        gap: .3rem;
+        padding: .3rem;
+        margin-bottom: .7rem;
+        background: var(--superficie);
+        border: 1px solid var(--borde);
+        border-radius: 999px;
+        max-width: 100%;
+    }
+
+    .sentido {
+        min-height: 2.5rem;
+        padding: .45rem 1.2rem;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--texto);
+        font: inherit;
+        font-size: .88rem;
+        font-weight: 700;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .sentido.activo {
+        background: var(--naranja);
+        color: #1b1b1b;
+    }
+
+    @media (max-width: 575.98px) {
+        .sentidos {
+            display: flex;
+        }
+
+        .sentido {
+            flex: 1;
+        }
+    }
+
+    .pista-ampliar {
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+        margin: 0 0 .6rem;
+        font-size: .8rem;
+        color: var(--suave);
+    }
+
+    .lamina .cargando,
+    .lamina .sin-horario {
+        display: grid;
+        place-items: center;
+        gap: .6rem;
+        min-height: 260px;
+        padding: 2rem;
+        text-align: center;
+        color: #5b524e;
+        background: #faf6f3;
+    }
+
+    .lamina .sin-horario i {
+        font-size: 2rem;
+        color: var(--rojo);
+    }
+
+    .aviso-horario {
+        margin-top: .6rem;
+        font-size: .78rem;
+        color: var(--suave);
+    }
+
+    /* ---------- Mapa ---------- */
+    #mapa iframe {
+        aspect-ratio: 16 / 9;
+        min-height: 320px;
+        max-height: 520px;
+    }
+
+    @media (max-width: 575.98px) {
+        #mapa iframe {
+            aspect-ratio: 4 / 5;
+        }
+    }
+
+    /* ---------- Pie ---------- */
+    .pie-web {
+        padding: 2rem 1rem calc(2rem + env(safe-area-inset-bottom));
+        text-align: center;
+        font-size: .85rem;
+    }
+
+    .pie-web .datos {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        margin-top: .75rem;
+    }
+
+    @media (min-width: 768px) {
+        .pie-web .datos {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    /* Accesibilidad */
+    .pueblo :focus-visible {
+        outline: 2px solid var(--naranja);
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .pueblo *,
+        .pueblo *::before {
+            animation: none !important;
+            transition: none !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+ 
